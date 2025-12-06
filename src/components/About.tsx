@@ -1,0 +1,243 @@
+import {
+  Container,
+  Title,
+  Text,
+  Box,
+  Paper,
+  SimpleGrid,
+  ThemeIcon,
+} from "@mantine/core";
+import { motion } from "framer-motion";
+import { aboutMe, features, contactInfo } from "../data/portfolioData";
+import { processFeatures } from "../utils/dataProcessors";
+
+const processedFeatures = processFeatures(features);
+
+export function About() {
+  return (
+    <Box
+      id="about"
+      style={{
+        padding: "80px 0",
+        backgroundColor: "#ffffff",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+       <motion.div
+        animate={{
+          rotate: [0, 360],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        style={{
+          position: "absolute",
+          top: "-10%",
+          right: "-5%",
+          width: "400px",
+          height: "400px",
+          background:
+            "radial-gradient(circle, rgba(0,161,230,0.08) 0%, transparent 70%)",
+          borderRadius: "50%",
+          filter: "blur(50px)",
+        }}
+      />
+
+      <Container size="lg" style={{ position: "relative", zIndex: 1 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, type: "spring" }}
+        >
+          <Title
+            order={2}
+            style={{
+              fontSize: "clamp(2rem, 5vw, 3rem)",
+              fontWeight: 700,
+              textAlign: "center",
+              marginBottom: "1rem",
+              background: "linear-gradient(45deg, #0088cc, #9333ea)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            {aboutMe.title}
+          </Title>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <Text
+              size="lg"
+              style={{
+                textAlign: "center",
+                maxWidth: "800px",
+                margin: "0 auto 3rem",
+                color: "#4a5568",
+                lineHeight: 1.7,
+              }}
+            >
+              {aboutMe.description}
+            </Text>
+          </motion.div>
+        </motion.div>
+
+        <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
+          {processedFeatures.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{
+                opacity: 0,
+                x: index % 2 === 0 ? -100 : 100,
+                rotateY: 45,
+              }}
+              whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 100,
+              }}
+              style={{
+                transformStyle: "preserve-3d",
+                perspective: "1000px",
+              }}
+            >
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                  rotateY: index % 2 === 0 ? 5 : -5,
+                  rotateX: -5,
+                  z: 50,
+                }}
+                transition={{ duration: 0.4 }}
+                style={{
+                  transformStyle: "preserve-3d",
+                  height: "100%",
+                }}
+              >
+                <Paper
+                  shadow="md"
+                  radius="lg"
+                  p="xl"
+                  style={{
+                    cursor: "pointer",
+                    border: "1px solid #e0e0e0",
+                    height: "100%",
+                    boxShadow: "0 10px 30px rgba(0, 161, 230, 0.1)",
+                  }}
+                >
+                  <motion.div
+                    whileHover={{
+                      rotate: 360,
+                      scale: 1.2,
+                    }}
+                    transition={{ duration: 0.8, type: "spring" }}
+                  >
+                    <ThemeIcon
+                      size={60}
+                      radius="md"
+                      variant="gradient"
+                      gradient={
+                        feature.color === "cyan"
+                          ? { from: "cyan", to: "blue", deg: 45 }
+                          : { from: "violet", to: "grape", deg: 45 }
+                      }
+                      style={{ marginBottom: "1rem" }}
+                    >
+                      <feature.icon />
+                    </ThemeIcon>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                  >
+                    <Title
+                      order={3}
+                      style={{ marginBottom: "0.5rem", fontSize: "1.25rem" }}
+                    >
+                      {feature.title}
+                    </Title>
+
+                    <Text style={{ color: "#718096", lineHeight: 1.6 }}>
+                      {feature.description}
+                    </Text>
+                  </motion.div>
+                </Paper>
+              </motion.div>
+            </motion.div>
+          ))}
+        </SimpleGrid>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <Paper
+            shadow="lg"
+            radius="lg"
+            p="xl"
+            style={{
+              marginTop: "3rem",
+              background: "linear-gradient(135deg, #e0f7ff 0%, #f3e8ff 100%)",
+              border: "none",
+            }}
+          >
+            <Title
+              order={3}
+              style={{ marginBottom: "1rem", textAlign: "center" }}
+            >
+              Contact Information
+            </Title>
+            <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="md">
+              {[
+                {
+                  label: "Location",
+                  value: contactInfo.location,
+                  color: "#0088cc",
+                },
+                { label: "Phone", value: contactInfo.phone, color: "#9333ea" },
+                {
+                  label: "Email",
+                  value: contactInfo.email,
+                  color: "#0088cc",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 + i * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                >
+                  <Box style={{ textAlign: "center" }}>
+                    <Text fw={600} size="sm" style={{ color: item.color }}>
+                      {item.label}
+                    </Text>
+                    <Text size="sm" style={{ color: "#4a5568" }}>
+                      {item.value}
+                    </Text>
+                  </Box>
+                </motion.div>
+              ))}
+            </SimpleGrid>
+          </Paper>
+        </motion.div>
+      </Container>
+    </Box>
+  );
+}
