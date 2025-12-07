@@ -14,6 +14,8 @@ export const contactInfo: ContactInfo = {
   email: "joudi.kab01@gmail.com",
 };
 
+export const cvPath = "/src/assets/files/eng_judy_alqabbani.pdf";
+
 export const languages: Language[] = [
   {
     lang: "Arabic",

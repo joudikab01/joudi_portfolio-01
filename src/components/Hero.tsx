@@ -7,6 +7,7 @@ import {
 } from "@tabler/icons-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
+import { cvPath } from "../data/portfolioData";
 
 export function Hero() {
   const { scrollY } = useScroll();
@@ -295,7 +296,7 @@ export function Hero() {
                 >
                   <Button
                     component="a"
-                    href="/src/assets/files/eng_judy_alqabbani.pdf"
+                    href={cvPath}
                     download="Judy_Alqabbani_CV.pdf"
                     variant="outline"
                     size="lg"
