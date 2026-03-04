@@ -8,7 +8,7 @@ import {
   ThemeIcon,
 } from "@mantine/core";
 import { motion } from "framer-motion";
-import { aboutMe, features, contactInfo } from "../data/portfolioData";
+import { aboutMe, features } from "../data/portfolioData";
 import { processFeatures } from "../utils/dataProcessors";
 
 const processedFeatures = processFeatures(features);
@@ -180,63 +180,6 @@ export function About() {
           ))}
         </SimpleGrid>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <Paper
-            shadow="lg"
-            radius="lg"
-            p="xl"
-            style={{
-              marginTop: "3rem",
-              background: "linear-gradient(135deg, #e0f7ff 0%, #f3e8ff 100%)",
-              border: "none",
-            }}
-          >
-            <Title
-              order={3}
-              style={{ marginBottom: "1rem", textAlign: "center" }}
-            >
-              Contact Information
-            </Title>
-            <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="md">
-              {[
-                {
-                  label: "Location",
-                  value: contactInfo.location,
-                  color: "#0088cc",
-                },
-                { label: "Phone", value: contactInfo.phone, color: "#9333ea" },
-                {
-                  label: "Email",
-                  value: contactInfo.email,
-                  color: "#0088cc",
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 + i * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                >
-                  <Box style={{ textAlign: "center" }}>
-                    <Text fw={600} size="sm" style={{ color: item.color }}>
-                      {item.label}
-                    </Text>
-                    <Text size="sm" style={{ color: "#4a5568" }}>
-                      {item.value}
-                    </Text>
-                  </Box>
-                </motion.div>
-              ))}
-            </SimpleGrid>
-          </Paper>
-        </motion.div>
       </Container>
     </Box>
   );

@@ -215,7 +215,9 @@ export function Hero() {
                   fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
                   fontWeight: 600,
                   marginBottom: "1.5rem",
-                  color: "#5b21b6",
+                  background: "linear-gradient(45deg, #9333ea, #0088cc)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
                 }}
               >
                 Flutter Developer & Software Engineer
