@@ -74,10 +74,12 @@ export function Projects() {
                 duration: 0.6,
                 delay: (index % 2) * 0.15,
               }}
+              style={{ height: "100%" }}
             >
               <motion.div
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.3 }}
+                style={{ height: "100%" }}
               >
                 <Paper
                   shadow="lg"
@@ -87,6 +89,8 @@ export function Projects() {
                     height: "100%",
                     border: "1px solid #e0e0e0",
                     boxShadow: "0 10px 30px rgba(0, 161, 230, 0.15)",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
                   <Box
@@ -110,7 +114,14 @@ export function Projects() {
                     </motion.div>
                   </Box>
 
-                  <Box p="xl">
+                  <Box
+                    p="xl"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      flex: 1,
+                    }}
+                  >
                     <Group justify="space-between" mb="xs">
                       <Title order={3} size="h4">
                         {project.title}
@@ -140,7 +151,7 @@ export function Projects() {
                     <Text
                       size="sm"
                       c="dimmed"
-                      style={{ lineHeight: 1.6, marginBottom: "1rem" }}
+                      style={{ lineHeight: 1.6, marginBottom: "1rem", flex: 1 }}
                     >
                       {project.description}
                     </Text>

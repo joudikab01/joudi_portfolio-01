@@ -68,3 +68,11 @@ export interface ProcessedProject extends Project {
 export interface ProcessedExperience extends Experience {
   color: ColorType;
 }
+
+export interface Recommendation {
+  name: string;
+  title: string;
+  relationship: string;
+  message: string;
+  linkedin?: string;
+}

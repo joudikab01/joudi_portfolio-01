@@ -12,7 +12,7 @@ export function Footer() {
         overflow: "hidden",
       }}
     >
-       <motion.div
+      <motion.div
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.1, 0.2, 0.1],
@@ -47,33 +47,21 @@ export function Footer() {
               marginBottom: "2rem",
             }}
           >
-             <motion.div
+            <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
               <Text
-                size="md"
-                fw={500}
+                size="lg"
+                fw={600}
                 style={{
-                  color: "#ffffff",
-                  marginBottom: "1.5rem",
-                  opacity: 0.9,
+                  marginBottom: "1rem",
+                  letterSpacing: "0.5px",
                 }}
               >
-                📋 References are available upon request
+                © {new Date().getFullYear()} Judy Ghiyath Alqabbani
               </Text>
             </motion.div>
-
-             <Text
-              size="lg"
-              fw={600}
-              style={{
-                marginBottom: "1rem",
-                letterSpacing: "0.5px",
-              }}
-            >
-              © {new Date().getFullYear()} Judy Ghiyath Alqabbani
-            </Text>
 
             <Text
               size="sm"

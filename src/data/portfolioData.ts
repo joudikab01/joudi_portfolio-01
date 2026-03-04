@@ -6,6 +6,7 @@ import type {
   SkillCategory,
   Project,
   Experience,
+  Recommendation,
 } from "../types/portfolio.types";
 
 export const contactInfo: ContactInfo = {
@@ -253,6 +254,17 @@ export const projects: Project[] = [
     playStore: "",
     appStore: "",
     image: "/src/assets/image/projects/alma.png",
+  },
+];
+
+export const recommendations: Recommendation[] = [
+  {
+    name: "Bisher Alhasani Aljazaeri",
+    title: "Project Manager at Pharaon Group",
+    relationship: "Worked with Judy · July 2025 – Present",
+    message:
+      "During our collaboration on the Pyramind project, I had the pleasure of overseeing Nazem Almsouti, and I can state with confidence that he is a superb frontend engineer. He is quick, very talented, and very proactive. He takes the initiative without waiting for guidance and never lets obstacles stand in the way of advancement. Rather than claiming that something is challenging, he always finds a solution. He doesn't need micromanagement, is adaptable, and is a pleasure to work with. He is quick to grasp requirements, meticulous, and regularly completes excellent work on schedule. His dedication, work ethic, and sense of ownership are genuinely remarkable. He would be a great asset to any team.",
+    linkedin: "https://www.linkedin.com/in/bisher-al-hasani-19008a219/",
   },
 ];
 
