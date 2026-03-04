@@ -72,6 +72,7 @@ export interface ProcessedExperience extends Experience {
 export interface Recommendation {
   name: string;
   title: string;
+  expertise: string;
   relationship: string;
   message: string;
   linkedin?: string;

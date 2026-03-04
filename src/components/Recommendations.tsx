@@ -1,238 +1,360 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Container, Title, Text, Box, Anchor } from "@mantine/core";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import {
-  Container,
-  Title,
-  Text,
-  Box,
-  Paper,
-  Group,
-  Avatar,
-  Stack,
-  ActionIcon,
-  Badge,
-} from "@mantine/core";
-import { IconChevronLeft, IconChevronRight, IconQuote, IconBrandLinkedin } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "framer-motion";
+  IconChevronLeft,
+  IconChevronRight,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
 import { recommendations } from "../data/portfolioData";
 
+const slideVariants = {
+  enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 80 : -80 }),
+  center: { opacity: 1, x: 0 },
+  exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -80 : 80 }),
+};
+
 export function Recommendations() {
-  const [active, setActive] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
 
-  const goTo = (index: number) => {
-    setDirection(index > active ? 1 : -1);
-    setActive(index);
+  const go = (next: number) => {
+    setDirection(next > current ? 1 : -1);
+    setCurrent(next);
   };
 
-  const prev = () => goTo((active - 1 + recommendations.length) % recommendations.length);
-  const next = () => goTo((active + 1) % recommendations.length);
+  const prev = () =>
+    go((current - 1 + recommendations.length) % recommendations.length);
+  const next = () => go((current + 1) % recommendations.length);
 
-  const rec = recommendations[active];
-
+  const rec = recommendations[current];
   const initials = rec.name
     .split(" ")
     .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
+    .map((n) => n[0])
+    .join("");
 
   return (
     <Box
       id="recommendations"
+      ref={ref}
       style={{
         padding: "80px 0",
-        background: "linear-gradient(135deg, #f8f9fa 0%, #e0f7ff 50%, #f3e8ff 100%)",
+        background:
+          "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <Container size="md">
-        <Title
-          order={2}
-          style={{
-            fontSize: "clamp(2rem, 5vw, 3rem)",
-            fontWeight: 700,
-            textAlign: "center",
-            marginBottom: "0.75rem",
-            background: "linear-gradient(45deg, #0088cc, #9333ea)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          Recommendations
-        </Title>
+      <Box
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "600px",
+          height: "300px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(ellipse, rgba(0,136,204,0.12) 0%, transparent 70%)",
+          filter: "blur(60px)",
+          pointerEvents: "none",
+        }}
+      />
 
-        <Text
-          size="md"
-          style={{ textAlign: "center", color: "#718096", marginBottom: "3rem" }}
+      <Container size="md" style={{ position: "relative", zIndex: 1 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
         >
-          What colleagues say about working with me
-        </Text>
+          <Title
+            order={2}
+            style={{
+              textAlign: "center",
+              marginBottom: "0.75rem",
+              fontSize: "clamp(2rem, 4vw, 2.5rem)",
+              fontWeight: 700,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              background: "linear-gradient(45deg, #0088cc, #9333ea)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Recommendations
+          </Title>
+          <Text
+            style={{
+              textAlign: "center",
+              color: "rgba(255,255,255,0.5)",
+              marginBottom: "3rem",
+              fontSize: "1rem",
+            }}
+          >
+            What colleagues say about working with me
+          </Text>
+        </motion.div>
 
-        <Box style={{ position: "relative" }}>
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={active}
-              custom={direction}
-              initial={{ opacity: 0, x: direction * 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: direction * -60 }}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Box
+            style={{
+              position: "relative",
+              border: "1px solid rgba(0,136,204,0.25)",
+              borderRadius: "20px",
+              padding: "3rem 3.5rem",
+              background:
+                "linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%)",
+              boxShadow:
+                "0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(0,136,204,0.15)",
+              minHeight: "320px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              overflow: "hidden",
+            }}
+          >
+            <Box
+              style={{
+                position: "absolute",
+                top: "-0.5rem",
+                left: "2rem",
+                fontSize: "9rem",
+                lineHeight: 1,
+                color: "#0088cc",
+                opacity: 0.08,
+                fontFamily: "Georgia, serif",
+                userSelect: "none",
+                pointerEvents: "none",
+              }}
             >
-              <Paper
-                shadow="xl"
-                radius="xl"
-                p="xl"
-                style={{
-                  background: "#ffffff",
-                  border: "1px solid rgba(147, 51, 234, 0.12)",
-                  position: "relative",
-                  overflow: "hidden",
-                }}
-              >
-                 <Box
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: "4px",
-                    background: "linear-gradient(90deg, #0088cc, #9333ea)",
-                  }}
-                />
+              "
+            </Box>
 
-                 <Box
-                  style={{
-                    position: "absolute",
-                    top: "1.5rem",
-                    right: "1.5rem",
-                    opacity: 0.06,
-                  }}
+            <Box style={{ position: "relative", flex: 1 }}>
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={current}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
-                  <IconQuote size={80} color="#9333ea" />
-                </Box>
+                  <Text
+                    style={{
+                      color: "rgba(255,255,255,0.88)",
+                      fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
+                      lineHeight: 1.9,
+                      fontStyle: "italic",
+                      marginBottom: "2.5rem",
+                      fontWeight: 400,
+                    }}
+                  >
+                    "{rec.message}"
+                  </Text>
 
-                 <Text
-                  size="md"
-                  style={{
-                    color: "#2d3748",
-                    lineHeight: 1.85,
-                    fontStyle: "italic",
-                    marginBottom: "2rem",
-                    marginTop: "1rem",
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
-                  "{rec.message}"
-                </Text>
-
-                 <Group justify="space-between" align="flex-end">
-                  <Group gap="md">
-                    <Avatar
-                      size={52}
-                      radius="xl"
+                  <Box
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "1.25rem",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <Box
                       style={{
+                        width: "52px",
+                        height: "52px",
+                        borderRadius: "50%",
                         background: "linear-gradient(135deg, #0088cc, #9333ea)",
-                        color: "#fff",
-                        fontWeight: 700,
-                        fontSize: "1rem",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                         flexShrink: 0,
+                        fontSize: "1.1rem",
+                        fontWeight: 700,
+                        color: "#fff",
+                        boxShadow: "0 4px 12px rgba(0,136,204,0.4)",
                       }}
                     >
                       {initials}
-                    </Avatar>
-                    <Stack gap={2}>
-                      <Text fw={700} size="md" style={{ color: "#1a202c" }}>
+                    </Box>
+
+                    <Box>
+                      <Text
+                        style={{
+                          color: "#fff",
+                          fontWeight: 700,
+                          fontSize: "1rem",
+                          lineHeight: 1.3,
+                        }}
+                      >
                         {rec.name}
                       </Text>
-                      <Text size="sm" style={{ color: "#9333ea", fontWeight: 500 }}>
+                      <Text
+                        style={{
+                          color: "#0088cc",
+                          fontSize: "0.875rem",
+                          fontWeight: 500,
+                        }}
+                      >
                         {rec.title}
                       </Text>
-                      <Text size="xs" style={{ color: "#a0aec0" }}>
+                      <Text
+                        style={{
+                          color: "rgba(255,255,255,0.4)",
+                          fontSize: "0.8rem",
+                          marginTop: "0.1rem",
+                        }}
+                      >
                         {rec.relationship}
                       </Text>
-                    </Stack>
-                  </Group>
+                      {rec.linkedin && (
+                        <Anchor
+                          href={rec.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "0.3rem",
+                            marginTop: "0.4rem",
+                            color: "#0088cc",
+                            fontSize: "0.8rem",
+                            fontWeight: 500,
+                            textDecoration: "none",
+                            transition: "color 0.2s ease",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.color = "#9333ea";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.color = "#0088cc";
+                          }}
+                        >
+                          <IconBrandLinkedin size={14} />
+                          LinkedIn
+                        </Anchor>
+                      )}
+                    </Box>
 
-                  {rec.linkedin && (
-                    <Badge
-                      component="a"
-                      href={rec.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="light"
-                      color="blue"
-                      size="lg"
-                      radius="md"
-                      leftSection={<IconBrandLinkedin size={14} />}
-                      style={{
-                        cursor: "pointer",
-                        textDecoration: "none",
-                        border: "1px solid rgba(0,119,181,0.2)",
-                        transition: "all 0.2s ease",
-                      }}
-                      onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
-                        e.currentTarget.style.backgroundColor = "#0077b5";
-                        e.currentTarget.style.color = "#fff";
-                      }}
-                      onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
-                        e.currentTarget.style.backgroundColor = "";
-                        e.currentTarget.style.color = "";
-                      }}
-                    >
-                      via LinkedIn
-                    </Badge>
-                  )}
-                </Group>
-              </Paper>
-            </motion.div>
-          </AnimatePresence>
+                    <Box style={{ marginLeft: "auto" }}>
+                      <Box
+                        style={{
+                          background: "rgba(0,136,204,0.12)",
+                          border: "1px solid rgba(0,136,204,0.35)",
+                          borderRadius: "999px",
+                          padding: "0.3rem 1rem",
+                          display: "inline-block",
+                        }}
+                      >
+                        <Text
+                          style={{
+                            color: "#0088cc",
+                            fontSize: "0.75rem",
+                            fontWeight: 600,
+                            letterSpacing: "0.06em",
+                            textTransform: "uppercase",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {rec.expertise}
+                        </Text>
+                      </Box>
+                    </Box>
+                  </Box>
+                </motion.div>
+              </AnimatePresence>
+            </Box>
+          </Box>
 
-           {recommendations.length > 1 && (
-            <Group justify="center" gap="md" style={{ marginTop: "2rem" }}>
-              <ActionIcon
-                variant="light"
-                color="blue"
-                size="lg"
-                radius="xl"
-                onClick={prev}
-                style={{ border: "1px solid rgba(0,136,204,0.25)" }}
-              >
-                <IconChevronLeft size={18} />
-              </ActionIcon>
+          <Box
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "1.5rem",
+              marginTop: "2rem",
+            }}
+          >
+            <motion.button
+              onClick={prev}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={recommendations.length <= 1}
+              style={{
+                width: "44px",
+                height: "44px",
+                borderRadius: "50%",
+                border: "1px solid rgba(0,136,204,0.4)",
+                backgroundColor: "rgba(0,136,204,0.12)",
+                color: "#fff",
+                cursor: recommendations.length <= 1 ? "default" : "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                opacity: recommendations.length <= 1 ? 0.3 : 1,
+              }}
+            >
+              <IconChevronLeft size={20} />
+            </motion.button>
 
-              <Group gap={8}>
-                {recommendations.map((_, i) => (
-                  <Box
-                    key={i}
-                    onClick={() => goTo(i)}
-                    style={{
-                      width: i === active ? 24 : 8,
-                      height: 8,
-                      borderRadius: 4,
-                      background:
-                        i === active
-                          ? "linear-gradient(90deg, #0088cc, #9333ea)"
-                          : "#cbd5e0",
-                      cursor: "pointer",
-                      transition: "all 0.3s ease",
-                    }}
-                  />
-                ))}
-              </Group>
+            <Box
+              style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}
+            >
+              {recommendations.map((_, i) => (
+                <motion.button
+                  key={i}
+                  onClick={() => go(i)}
+                  whileHover={{ scale: 1.2 }}
+                  style={{
+                    width: i === current ? "24px" : "8px",
+                    height: "8px",
+                    borderRadius: "999px",
+                    border: "none",
+                    background:
+                      i === current
+                        ? "linear-gradient(90deg, #0088cc, #9333ea)"
+                        : "rgba(255,255,255,0.25)",
+                    cursor: "pointer",
+                    padding: 0,
+                    transition: "all 0.3s ease",
+                  }}
+                />
+              ))}
+            </Box>
 
-              <ActionIcon
-                variant="light"
-                color="violet"
-                size="lg"
-                radius="xl"
-                onClick={next}
-                style={{ border: "1px solid rgba(147,51,234,0.25)" }}
-              >
-                <IconChevronRight size={18} />
-              </ActionIcon>
-            </Group>
-          )}
-        </Box>
+            <motion.button
+              onClick={next}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={recommendations.length <= 1}
+              style={{
+                width: "44px",
+                height: "44px",
+                borderRadius: "50%",
+                border: "1px solid rgba(147,51,234,0.4)",
+                backgroundColor: "rgba(147,51,234,0.12)",
+                color: "#fff",
+                cursor: recommendations.length <= 1 ? "default" : "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                opacity: recommendations.length <= 1 ? 0.3 : 1,
+              }}
+            >
+              <IconChevronRight size={20} />
+            </motion.button>
+          </Box>
+        </motion.div>
       </Container>
     </Box>
   );
