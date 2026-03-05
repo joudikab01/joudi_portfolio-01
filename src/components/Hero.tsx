@@ -1,6 +1,5 @@
 import { Container, Title, Text, Button, Group, Box } from "@mantine/core";
 import {
-  // IconBrandGithub,
   IconBrandLinkedin,
   IconMail,
   IconDownload,
@@ -8,6 +7,7 @@ import {
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { cvPath } from "../data/portfolioData";
+import { GlitchText } from "./GlitchText";
 
 export function Hero() {
   const { scrollY } = useScroll();
@@ -36,7 +36,8 @@ export function Hero() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        background: "linear-gradient(135deg, #e0f7ff 0%, #f3e8ff 100%)",
+        background:
+          "linear-gradient(160deg, #f0f9ff 0%, #faf5ff 40%, #f0f9ff 70%, #f5f0ff 100%)",
         paddingTop: "60px",
         position: "relative",
         overflow: "hidden",
@@ -169,6 +170,41 @@ export function Hero() {
           <Box
             style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}
           >
+             <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              style={{ marginBottom: "1.5rem" }}
+            >
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  padding: "0.4rem 1.2rem",
+                  borderRadius: "999px",
+                  background: "rgba(0, 136, 204, 0.08)",
+                  border: "1px solid rgba(0, 136, 204, 0.2)",
+                  fontSize: "0.85rem",
+                  fontWeight: 600,
+                  color: "#0088cc",
+                  letterSpacing: "0.03em",
+                }}
+              >
+                <span
+                  style={{
+                    width: "7px",
+                    height: "7px",
+                    borderRadius: "50%",
+                    backgroundColor: "#22c55e",
+                    boxShadow: "0 0 0 2px rgba(34, 197, 94, 0.3)",
+                    display: "inline-block",
+                  }}
+                />
+                Available for opportunities
+              </span>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 100, rotateX: 90 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -189,10 +225,12 @@ export function Hero() {
                   fontSize: "clamp(2.5rem, 8vw, 4.5rem)",
                   fontWeight: 800,
                   marginBottom: "1rem",
-                  background: "linear-gradient(45deg, #0088cc, #9333ea)",
+                  background:
+                    "linear-gradient(135deg, #0062a3 0%, #6d28d9 60%, #9333ea 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  textShadow: "0 4px 20px rgba(0, 136, 204, 0.3)",
+                  lineHeight: 1.15,
+                  letterSpacing: "-0.02em",
                 }}
               >
                 Judy Ghiyath Alqabbani
@@ -212,15 +250,22 @@ export function Hero() {
               <Title
                 order={2}
                 style={{
-                  fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
-                  fontWeight: 600,
+                  fontSize: "clamp(1.2rem, 4vw, 2rem)",
+                  fontWeight: 500,
                   marginBottom: "1.5rem",
-                  background: "linear-gradient(45deg, #9333ea, #0088cc)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+                  letterSpacing: "0.01em",
+                  display: "block",
                 }}
               >
-                Flutter Developer & Software Engineer
+                <GlitchText
+                  text="Flutter Developer · Software Engineer"
+                  style={{
+                    background: "linear-gradient(135deg, #7c3aed, #0062a3)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    letterSpacing: "0.01em",
+                  }}
+                />
               </Title>
             </motion.div>
 
@@ -233,11 +278,12 @@ export function Hero() {
                 size="lg"
                 style={{
                   marginBottom: "2rem",
-                  lineHeight: 1.7,
-                  color: "#4a5568",
-                  maxWidth: "700px",
+                  lineHeight: 1.8,
+                  color: "#6b7280",
+                  maxWidth: "620px",
                   margin: "0 auto 2rem",
-                  fontSize: "clamp(1rem, 2vw, 1.25rem)",
+                  fontSize: "clamp(1rem, 2vw, 1.15rem)",
+                  fontWeight: 400,
                 }}
               >
                 Results-driven Software Engineer specializing in cross-platform
@@ -271,12 +317,16 @@ export function Hero() {
                     component="a"
                     href="#contact"
                     size="lg"
-                    radius="md"
+                    radius="xl"
                     style={{
-                      background: "linear-gradient(45deg, #00a1e6, #9333ea)",
-                      boxShadow: "0 4px 15px rgba(0, 161, 230, 0.4)",
+                      background: "linear-gradient(135deg, #0062a3, #7c3aed)",
+                      boxShadow: "0 8px 24px rgba(0, 98, 163, 0.3)",
+                      paddingLeft: "2rem",
+                      paddingRight: "2rem",
+                      fontWeight: 600,
+                      letterSpacing: "0.02em",
                     }}
-                    leftSection={<IconMail size={20} />}
+                    leftSection={<IconMail size={18} />}
                   >
                     Get In Touch
                   </Button>
@@ -302,13 +352,18 @@ export function Hero() {
                     download="Judy_Alqabbani_CV.pdf"
                     variant="outline"
                     size="lg"
-                    radius="md"
-                    color="cyan"
-                    leftSection={<IconDownload size={20} />}
+                    radius="xl"
                     style={{
-                      borderWidth: "2px",
-                      boxShadow: "0 4px 15px rgba(0, 161, 230, 0.2)",
+                      borderWidth: "1.5px",
+                      borderColor: "rgba(0, 98, 163, 0.4)",
+                      color: "#0062a3",
+                      paddingLeft: "2rem",
+                      paddingRight: "2rem",
+                      fontWeight: 600,
+                      letterSpacing: "0.02em",
+                      boxShadow: "0 4px 12px rgba(0, 98, 163, 0.1)",
                     }}
+                    leftSection={<IconDownload size={18} />}
                   >
                     Download CV
                   </Button>
@@ -323,12 +378,7 @@ export function Hero() {
             >
               <Group justify="center" gap="lg">
                 {[
-                  // {
-                  //   icon: IconBrandGithub,
-                  //   href: "https://github.com/yourusername",
-                  //   color: "gray",
-                  //   label: "GitHub",
-                  // },
+               
                   {
                     icon: IconBrandLinkedin,
                     href: "https://www.linkedin.com/in/judy-alqabbani-2bb5b81b4/",

@@ -14,6 +14,7 @@ import { IconBrandGooglePlay, IconBrandApple } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { projects } from "../data/portfolioData";
 import { processProjects } from "../utils/dataProcessors";
+import { GlitchText } from "./GlitchText";
 
 const processedProjects = processProjects(projects);
 
@@ -33,29 +34,21 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Title
-            order={2}
-            style={{
-              fontSize: "clamp(2rem, 5vw, 3rem)",
-              fontWeight: 700,
-              textAlign: "center",
-              marginBottom: "1rem",
-              background: "linear-gradient(45deg, #0088cc, #9333ea)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Featured Projects
-          </Title>
+          <Box style={{ textAlign: "center", marginBottom: "1rem" }}>
+            <Title order={2} style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 700, display: "inline-block" }}>
+              <GlitchText text="Featured Projects" style={{ background: "linear-gradient(135deg, #0062a3, #7c3aed)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", letterSpacing: "-0.01em" }} />
+            </Title>
+          </Box>
 
           <Text
             size="lg"
             style={{
               textAlign: "center",
-              maxWidth: "700px",
-              margin: "0 auto 3rem",
-              color: "#4a5568",
-              lineHeight: 1.7,
+              maxWidth: "600px",
+              margin: "1.5rem auto 3rem",
+              color: "#6b7280",
+              lineHeight: 1.8,
+              fontWeight: 400,
             }}
           >
             Showcase of mobile applications I've developed, delivering
@@ -82,15 +75,17 @@ export function Projects() {
                 style={{ height: "100%" }}
               >
                 <Paper
-                  shadow="lg"
-                  radius="lg"
+                  shadow="sm"
+                  radius="xl"
                   style={{
                     overflow: "hidden",
                     height: "100%",
-                    border: "1px solid #e0e0e0",
-                    boxShadow: "0 10px 30px rgba(0, 161, 230, 0.15)",
+                    border: "1px solid rgba(0, 136, 204, 0.1)",
+                    background: "rgba(255, 255, 255, 0.9)",
+                    boxShadow: "0 4px 24px rgba(0, 98, 163, 0.08)",
                     display: "flex",
                     flexDirection: "column",
+                    transition: "box-shadow 0.3s ease",
                   }}
                 >
                   <Box

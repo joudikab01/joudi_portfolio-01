@@ -10,6 +10,7 @@ import {
 import { motion } from "framer-motion";
 import { aboutMe, features } from "../data/portfolioData";
 import { processFeatures } from "../utils/dataProcessors";
+import { GlitchText } from "./GlitchText";
 
 const processedFeatures = processFeatures(features);
 
@@ -54,20 +55,26 @@ export function About() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, type: "spring" }}
         >
-          <Title
-            order={2}
-            style={{
-              fontSize: "clamp(2rem, 5vw, 3rem)",
-              fontWeight: 700,
-              textAlign: "center",
-              marginBottom: "1rem",
-              background: "linear-gradient(45deg, #0088cc, #9333ea)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            {aboutMe.title}
-          </Title>
+          <Box style={{ textAlign: "center", marginBottom: "1rem" }}>
+            <Title
+              order={2}
+              style={{
+                fontSize: "clamp(2rem, 5vw, 3rem)",
+                fontWeight: 700,
+                display: "inline-block",
+              }}
+            >
+              <GlitchText
+                text={aboutMe.title}
+                style={{
+                  background: "linear-gradient(135deg, #0062a3, #7c3aed)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  letterSpacing: "-0.01em",
+                }}
+              />
+            </Title>
+          </Box>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -79,10 +86,11 @@ export function About() {
               size="lg"
               style={{
                 textAlign: "center",
-                maxWidth: "800px",
-                margin: "0 auto 3rem",
-                color: "#4a5568",
-                lineHeight: 1.7,
+                maxWidth: "700px",
+                margin: "1.5rem auto 3rem",
+                color: "#6b7280",
+                lineHeight: 1.8,
+                fontWeight: 400,
               }}
             >
               {aboutMe.description}
@@ -126,14 +134,17 @@ export function About() {
                 }}
               >
                 <Paper
-                  shadow="md"
-                  radius="lg"
+                  shadow="sm"
+                  radius="xl"
                   p="xl"
                   style={{
                     cursor: "pointer",
-                    border: "1px solid #e0e0e0",
+                    border: "1px solid rgba(0, 136, 204, 0.1)",
                     height: "100%",
-                    boxShadow: "0 10px 30px rgba(0, 161, 230, 0.1)",
+                    background: "rgba(255, 255, 255, 0.8)",
+                    backdropFilter: "blur(8px)",
+                    boxShadow: "0 4px 24px rgba(0, 98, 163, 0.07), 0 1px 2px rgba(0,0,0,0.04)",
+                    transition: "box-shadow 0.3s ease, transform 0.3s ease",
                   }}
                 >
                   <motion.div

@@ -11,6 +11,7 @@ import {
 import { motion } from "framer-motion";
 import { skillCategories, languages } from "../data/portfolioData";
 import { processSkillCategories } from "../utils/dataProcessors";
+import { GlitchText } from "./GlitchText";
 
 const processedSkillCategories = processSkillCategories(skillCategories);
 
@@ -59,20 +60,19 @@ export function Skills() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, type: "spring" }}
         >
-          <Title
-            order={2}
-            style={{
-              fontSize: "clamp(2rem, 5vw, 3rem)",
-              fontWeight: 700,
-              textAlign: "center",
-              marginBottom: "1rem",
-              background: "linear-gradient(45deg, #0088cc, #9333ea)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Skills & Technologies
-          </Title>
+          <Box style={{ textAlign: "center", marginBottom: "1rem" }}>
+            <Title order={2} style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 700, display: "inline-block" }}>
+              <GlitchText
+                text="Skills & Technologies"
+                style={{
+                  background: "linear-gradient(135deg, #0062a3, #7c3aed)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  letterSpacing: "-0.01em",
+                }}
+              />
+            </Title>
+          </Box>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -84,10 +84,11 @@ export function Skills() {
               size="lg"
               style={{
                 textAlign: "center",
-                maxWidth: "700px",
-                margin: "0 auto 3rem",
-                color: "#4a5568",
-                lineHeight: 1.7,
+                maxWidth: "600px",
+                margin: "1.5rem auto 3rem",
+                color: "#6b7280",
+                lineHeight: 1.8,
+                fontWeight: 400,
               }}
             >
               Comprehensive technical expertise across mobile, web, and software
@@ -128,14 +129,16 @@ export function Skills() {
                 }}
               >
                 <Paper
-                  shadow="md"
-                  radius="lg"
+                  shadow="sm"
+                  radius="xl"
                   p="xl"
                   style={{
                     cursor: "pointer",
-                    border: "1px solid #e0e0e0",
+                    border: "1px solid rgba(147, 51, 234, 0.08)",
                     height: "100%",
-                    boxShadow: "0 10px 30px rgba(147, 51, 234, 0.12)",
+                    background: "rgba(255, 255, 255, 0.85)",
+                    backdropFilter: "blur(8px)",
+                    boxShadow: "0 4px 24px rgba(109, 40, 217, 0.06), 0 1px 2px rgba(0,0,0,0.04)",
                   }}
                 >
                   <Group mb="md">

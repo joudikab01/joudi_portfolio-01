@@ -6,6 +6,7 @@ import {
   IconTrophy,
   IconLanguage,
 } from '@tabler/icons-react';
+import { GlitchText } from './GlitchText';
 
 export function Education() {
   return (
@@ -13,43 +14,36 @@ export function Education() {
       id="education"
       style={{
         padding: '80px 0',
-        background: 'linear-gradient(135deg, #f8f9fa 0%, #e0f7ff 50%, #f3e8ff 100%)',
+        background: 'linear-gradient(160deg, #faf5ff 0%, #f0f9ff 50%, #f5f0ff 100%)',
       }}
     >
       <Container size="lg">
-        <Title
-          order={2}
-          style={{
-            fontSize: 'clamp(2rem, 5vw, 3rem)',
-            fontWeight: 700,
-            textAlign: 'center',
-            marginBottom: '3rem',
-            background: 'linear-gradient(45deg, #0088cc, #9333ea)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
-          Education & Leadership
-        </Title>
+        <Box style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <Title order={2} style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 700, display: 'inline-block' }}>
+            <GlitchText text="Education & Leadership" style={{ background: 'linear-gradient(135deg, #0062a3, #7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-0.01em' }} />
+          </Title>
+        </Box>
 
         <Paper
-          shadow="lg"
-          radius="lg"
+          shadow="sm"
+          radius="xl"
           p="xl"
           mb="xl"
           style={{
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             cursor: 'pointer',
-            backgroundColor: '#ffffff',
-            border: '1px solid #e0e0e0',
+            background: 'rgba(255, 255, 255, 0.85)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(0, 136, 204, 0.1)',
+            boxShadow: '0 4px 24px rgba(0, 98, 163, 0.07)',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.02)';
-            e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 161, 230, 0.3)';
+            e.currentTarget.style.transform = 'translateY(-3px)';
+            e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 98, 163, 0.15)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-            e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 4px 24px rgba(0, 98, 163, 0.07)';
           }}
         >
           <Group mb="md">
@@ -93,22 +87,36 @@ export function Education() {
           </Text>
         </Paper>
 
-        <Title order={3} mb="lg" ta="center" style={{ color: '#0088cc' }}>
+        <Title order={3} mb="lg" ta="center" style={{
+          background: 'linear-gradient(135deg, #0062a3, #0088cc)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          fontWeight: 700,
+        }}>
           Certifications
         </Title>
 
         <SimpleGrid cols={{ base: 1, md: 2 }} spacing="lg" mb="xl">
           <Paper
-            shadow="md"
-            radius="lg"
+            shadow="sm"
+            radius="xl"
             p="lg"
             style={{
-              transition: 'transform 0.3s ease',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               cursor: 'pointer',
-              border: '1px solid #e0e0e0',
+              background: 'rgba(255, 255, 255, 0.85)',
+              backdropFilter: 'blur(8px)',
+              border: '1px solid rgba(147, 51, 234, 0.1)',
+              boxShadow: '0 4px 16px rgba(109, 40, 217, 0.06)',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-4px)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 12px 32px rgba(109, 40, 217, 0.14)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 16px rgba(109, 40, 217, 0.06)';
+            }}
           >
             <Group>
               <ThemeIcon
@@ -131,16 +139,25 @@ export function Education() {
           </Paper>
 
           <Paper
-            shadow="md"
-            radius="lg"
+            shadow="sm"
+            radius="xl"
             p="lg"
             style={{
-              transition: 'transform 0.3s ease',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               cursor: 'pointer',
-              border: '1px solid #e0e0e0',
+              background: 'rgba(255, 255, 255, 0.85)',
+              backdropFilter: 'blur(8px)',
+              border: '1px solid rgba(0, 136, 204, 0.1)',
+              boxShadow: '0 4px 16px rgba(0, 98, 163, 0.06)',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-4px)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 98, 163, 0.14)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 98, 163, 0.06)';
+            }}
           >
             <Group>
               <ThemeIcon
@@ -163,23 +180,37 @@ export function Education() {
           </Paper>
         </SimpleGrid>
 
-        <Title order={3} mb="lg" ta="center" style={{ color: '#9333ea' }}>
+        <Title order={3} mb="lg" ta="center" style={{
+          background: 'linear-gradient(135deg, #7c3aed, #9333ea)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          fontWeight: 700,
+        }}>
           Volunteering & Leadership
         </Title>
 
         <SimpleGrid cols={{ base: 1, md: 2 }} spacing="lg">
           <Paper
-            shadow="lg"
-            radius="lg"
+            shadow="sm"
+            radius="xl"
             p="xl"
             style={{
-              transition: 'transform 0.3s ease',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               cursor: 'pointer',
-              backgroundColor: '#ffffff',
-              border: '2px solid #00a1e6',
+              background: 'rgba(255, 255, 255, 0.85)',
+              backdropFilter: 'blur(10px)',
+              borderLeft: '3px solid #00a1e6',
+              border: '1px solid rgba(0, 161, 230, 0.15)',
+              boxShadow: '0 4px 20px rgba(0, 98, 163, 0.07)',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 98, 163, 0.15)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 98, 163, 0.07)';
+            }}
           >
             <Group mb="md">
               <ThemeIcon
@@ -206,17 +237,25 @@ export function Education() {
           </Paper>
 
           <Paper
-            shadow="lg"
-            radius="lg"
+            shadow="sm"
+            radius="xl"
             p="xl"
             style={{
-              transition: 'transform 0.3s ease',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               cursor: 'pointer',
-              backgroundColor: '#ffffff',
-              border: '2px solid #9333ea',
+              background: 'rgba(255, 255, 255, 0.85)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(147, 51, 234, 0.15)',
+              boxShadow: '0 4px 20px rgba(109, 40, 217, 0.07)',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 16px 40px rgba(109, 40, 217, 0.15)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(109, 40, 217, 0.07)';
+            }}
           >
             <Group mb="md">
               <ThemeIcon

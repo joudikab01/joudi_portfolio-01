@@ -12,6 +12,7 @@ import { IconBriefcase } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { experiences } from "../data/portfolioData";
 import { processExperiences } from "../utils/dataProcessors";
+import { GlitchText } from "./GlitchText";
 
 const processedExperiences = processExperiences(experiences);
 
@@ -21,8 +22,7 @@ export function Experience() {
       id="experience"
       style={{
         padding: "80px 0",
-        background:
-          "linear-gradient(135deg, #f8f9fa 0%, #e0f7ff 50%, #f3e8ff 100%)",
+        background: "linear-gradient(160deg, #f0f9ff 0%, #faf5ff 50%, #f0f4ff 100%)",
       }}
     >
       <Container size="lg">
@@ -32,20 +32,19 @@ export function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Title
-            order={2}
-            style={{
-              fontSize: "clamp(2rem, 5vw, 3rem)",
-              fontWeight: 700,
-              textAlign: "center",
-              marginBottom: "3rem",
-              background: "linear-gradient(45deg, #0088cc, #9333ea)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Professional Experience
-          </Title>
+          <Box style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <Title order={2} style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 700, display: "inline-block" }}>
+              <GlitchText
+                text="Professional Experience"
+                style={{
+                  background: "linear-gradient(135deg, #0062a3, #7c3aed)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  letterSpacing: "-0.01em",
+                }}
+              />
+            </Title>
+          </Box>
         </motion.div>
 
         <Timeline
@@ -75,21 +74,24 @@ export function Experience() {
                     transition={{ duration: 0.3 }}
                   >
                     <Paper
-                      shadow="md"
-                      radius="lg"
+                      shadow="sm"
+                      radius="xl"
                       p="xl"
                       style={{
                         cursor: "pointer",
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e0e0e0",
+                        background: "rgba(255, 255, 255, 0.85)",
+                        backdropFilter: "blur(8px)",
+                        border: "1px solid rgba(0, 136, 204, 0.1)",
+                        boxShadow: "0 4px 20px rgba(0, 98, 163, 0.06)",
+                        transition: "box-shadow 0.3s ease",
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.boxShadow =
-                          "0 12px 24px rgba(0, 161, 230, 0.2)";
+                          "0 12px 32px rgba(0, 98, 163, 0.14)";
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.boxShadow =
-                          "0 1px 3px rgba(0, 0, 0, 0.1)";
+                          "0 4px 20px rgba(0, 98, 163, 0.06)";
                       }}
                     >
                       <Group justify="space-between" mb="xs">

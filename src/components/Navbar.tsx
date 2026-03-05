@@ -96,14 +96,17 @@ export function Navbar() {
             right: 0,
             zIndex: 1000,
             backgroundColor: isScrolled
-              ? "rgba(255, 255, 255, 0.95)"
-              : "rgba(255, 255, 255, 0.9)",
-            backdropFilter: "blur(10px)",
-            borderBottom: "2px solid #e0f7ff",
+              ? "rgba(255, 255, 255, 0.92)"
+              : "rgba(255, 255, 255, 0.75)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            borderBottom: isScrolled
+              ? "1px solid rgba(0, 136, 204, 0.12)"
+              : "1px solid rgba(255, 255, 255, 0.5)",
             boxShadow: isScrolled
-              ? "0 4px 20px rgba(0, 161, 230, 0.15)"
-              : "0 2px 10px rgba(0, 0, 0, 0.1)",
-            transition: "all 0.3s ease",
+              ? "0 4px 24px rgba(0, 0, 0, 0.06)"
+              : "none",
+            transition: "all 0.4s ease",
           }}
         >
            <motion.div
@@ -134,13 +137,13 @@ export function Navbar() {
                 <Anchor
                   href="#home"
                   style={{
-                    fontSize: isScrolled ? "1.3rem" : "1.5rem",
+                    fontSize: isScrolled ? "1.25rem" : "1.4rem",
                     fontWeight: 800,
-                    background: "linear-gradient(45deg, #00a1e6, #9333ea)",
+                    background: "linear-gradient(135deg, #0062a3, #7c3aed)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     textDecoration: "none",
-                    letterSpacing: "0.05em",
+                    letterSpacing: "-0.01em",
                     transition: "all 0.3s ease",
                   }}
                   onClick={(e) => {
@@ -164,22 +167,17 @@ export function Navbar() {
                     <Anchor
                       href={link.href}
                       style={{
-                        color: active === link.label ? "#00a1e6" : "#4a5568",
-                        fontSize: "0.95rem",
-                        fontWeight: 600,
+                        color: active === link.label ? "#0062a3" : "#6b7280",
+                        fontSize: "0.9rem",
+                        fontWeight: active === link.label ? 600 : 500,
                         textDecoration: "none",
-                        padding: "0.6rem 1.2rem",
-                        borderRadius: "8px",
-                        transition: "all 0.3s ease",
-                        backgroundColor:
-                          active === link.label
-                            ? "rgba(0, 161, 230, 0.1)"
-                            : "transparent",
-                        border:
-                          active === link.label
-                            ? "1px solid rgba(0, 161, 230, 0.3)"
-                            : "1px solid transparent",
+                        padding: "0.5rem 0.75rem",
+                        borderRadius: "6px",
+                        transition: "all 0.25s ease",
+                        backgroundColor: "transparent",
+                        border: "none",
                         position: "relative",
+                        letterSpacing: "0.01em",
                       }}
                       onClick={(e) => {
                         e.preventDefault();
@@ -187,15 +185,15 @@ export function Navbar() {
                       }}
                       onMouseEnter={(e) => {
                         if (active !== link.label) {
-                          e.currentTarget.style.color = "#00a1e6";
+                          e.currentTarget.style.color = "#0062a3";
                           e.currentTarget.style.backgroundColor =
-                            "rgba(0, 161, 230, 0.05)";
-                          e.currentTarget.style.transform = "translateY(-2px)";
+                            "rgba(0, 98, 163, 0.05)";
+                          e.currentTarget.style.transform = "translateY(-1px)";
                         }
                       }}
                       onMouseLeave={(e) => {
                         if (active !== link.label) {
-                          e.currentTarget.style.color = "#4a5568";
+                          e.currentTarget.style.color = "#6b7280";
                           e.currentTarget.style.backgroundColor = "transparent";
                           e.currentTarget.style.transform = "translateY(0)";
                         }

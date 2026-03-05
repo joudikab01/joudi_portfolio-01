@@ -9,6 +9,7 @@ import {
 } from "@mantine/core";
 import { IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { GlitchText } from "./GlitchText";
 
 const cards = [
   {
@@ -46,7 +47,7 @@ export function Contact() {
       id="contact"
       style={{
         padding: "80px 0",
-        background: "linear-gradient(135deg, #f8f9fa 0%, #e0f7ff 50%, #f3e8ff 100%)",
+        background: "linear-gradient(160deg, #f0f9ff 0%, #faf5ff 50%, #f0f4ff 100%)",
       }}
     >
       <Container size="lg">
@@ -56,29 +57,29 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Title
-            order={2}
-            style={{
-              fontSize: "clamp(2rem, 5vw, 3rem)",
-              fontWeight: 700,
-              textAlign: "center",
-              marginBottom: "1rem",
-              background: "linear-gradient(45deg, #0088cc, #9333ea)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Get In Touch
-          </Title>
+          <Box style={{ textAlign: "center", marginBottom: "1rem" }}>
+            <Title order={2} style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 700, display: "inline-block" }}>
+              <GlitchText
+                text="Get In Touch"
+                style={{
+                  background: "linear-gradient(135deg, #0062a3, #7c3aed)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  letterSpacing: "-0.01em",
+                }}
+              />
+            </Title>
+          </Box>
 
           <Text
             size="lg"
             style={{
               textAlign: "center",
-              maxWidth: "600px",
-              margin: "0 auto 3rem",
-              color: "#4a5568",
-              lineHeight: 1.7,
+              maxWidth: "500px",
+              margin: "1.5rem auto 3rem",
+              color: "#6b7280",
+              lineHeight: 1.8,
+              fontWeight: 400,
             }}
           >
             I'm always open to new opportunities and collaborations. Feel free to
@@ -102,20 +103,24 @@ export function Contact() {
               whileHover={{ y: -8, scale: 1.02 }}
             >
               <Paper
-                shadow="md"
-                radius="lg"
+                shadow="sm"
+                radius="xl"
                 p="xl"
                 style={{
                   cursor: "pointer",
                   textAlign: "center",
-                  border: "1px solid #e0e0e0",
+                  border: "1px solid rgba(255,255,255,0.9)",
                   height: "100%",
+                  background: "rgba(255, 255, 255, 0.8)",
+                  backdropFilter: "blur(12px)",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+                  transition: "box-shadow 0.3s ease, transform 0.3s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = `0 12px 24px ${card.shadow}`;
+                  e.currentTarget.style.boxShadow = `0 12px 32px ${card.shadow}`;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = "0 1px 3px rgba(0,0,0,0.1)";
+                  e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.05)";
                 }}
               >
                 <motion.div

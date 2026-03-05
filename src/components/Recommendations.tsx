@@ -7,6 +7,7 @@ import {
   IconBrandLinkedin,
 } from "@tabler/icons-react";
 import { recommendations } from "../data/portfolioData";
+import { GlitchText } from "./GlitchText";
 
 const slideVariants = {
   enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 80 : -80 }),
@@ -77,14 +78,18 @@ export function Recommendations() {
               marginBottom: "0.75rem",
               fontSize: "clamp(2rem, 4vw, 2.5rem)",
               fontWeight: 700,
-              letterSpacing: "0.04em",
-              textTransform: "uppercase",
-              background: "linear-gradient(45deg, #0088cc, #9333ea)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+              display: "block",
             }}
           >
-            Recommendations
+            <GlitchText
+              text="Recommendations"
+              style={{
+                background: "linear-gradient(135deg, #60b8f5, #c084fc)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                letterSpacing: "0.04em",
+              }}
+            />
           </Title>
           <Text
             style={{
