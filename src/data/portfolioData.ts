@@ -267,6 +267,15 @@ export const recommendations: Recommendation[] = [
       "During our collaboration on the Pyramind project, I had the pleasure of overseeing Nazem Almsouti, and I can state with confidence that he is a superb frontend engineer. He is quick, very talented, and very proactive. He takes the initiative without waiting for guidance and never lets obstacles stand in the way of advancement. Rather than claiming that something is challenging, he always finds a solution. He doesn't need micromanagement, is adaptable, and is a pleasure to work with. He is quick to grasp requirements, meticulous, and regularly completes excellent work on schedule. His dedication, work ethic, and sense of ownership are genuinely remarkable. He would be a great asset to any team.",
     linkedin: "https://www.linkedin.com/in/bisher-al-hasani-19008a219/",
   },
+  {
+    name: "Nazem Almsouti",
+    title: "Software Engineer · Frontend ",
+    expertise: "Frontend ",
+    relationship: "Worked with Judy · Pyramind Project at Pharaon Group",
+    message:
+      "I had the opportunity to work with Judy Alqabbani at Pharaon Group on the Pyramind project, where she served as Project Manager and I contributed as a frontend developer. Judy's strength lies in how she handles requirements: clearly written, well-structured, and easy to act on. Tasks were properly defined before they reached the team, which reduced unnecessary back-and-forth significantly. She managed task distribution and scheduling with a practical approach, took deadlines seriously, and followed up on project releases in an organized manner. When issues came up, she addressed them with a problem-solving mindset and was open to technical input from the development side, which kept communication straightforward. I'd recommend Judy to any team that values clear processes, on-time delivery, and structured project management.",
+    linkedin: "https://www.linkedin.com/in/nazem-almsouti/",
+  },
 ];
 
 export const experiences: Experience[] = [
