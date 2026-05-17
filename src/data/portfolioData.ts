@@ -7,6 +7,7 @@ import type {
   Project,
   Experience,
   Recommendation,
+  SubProject,
 } from "../types/portfolio.types";
 
 export const contactInfo: ContactInfo = {
@@ -145,21 +146,211 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
-    title: "Pyramind",
+    id: "glovent",
+    title: "Glovent Website",
     company: "Pharaon",
-    period: "04/2025 - Present",
+    period: "05/2026 - Present",
+    status: "in-progress",
+    url: "https://glovent-events.com/",
     description:
-      "Led the analysis and planning of the project, defining clear requirements, user stories, and acceptance criteria to align development with business goals Managed the development process using the Scrum framework, facilitating sprint planning, daily stand-ups, reviews, and retrospectives to ensure continuous progress and team collaboration.Coordinated cross-functional teams and stakeholders, tracking progress through agile tools and ensuring timely delivery of high-quality features..",
+      "Developed the official landing page for Glovent, an event management and production company. Built a visually engaging, fully responsive web presence that communicates the brand's identity, highlights its services, and drives client acquisition. Focused on performance, modern UI/UX, and seamless cross-device experience.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "CSS3",
+      "Responsive Design",
+      "Web Performance",
+    ],
+    features: [
+      "Fully responsive landing page optimized for all screen sizes",
+      "Modern UI/UX aligned with the Glovent brand identity",
+      "Service showcase sections with smooth animations and transitions",
+      "Performance-optimized asset loading for fast time-to-interactive",
+      "SEO-friendly structure and semantic HTML markup",
+    ],
+    image: "/src/assets/image/projects/Glovent.png",
+  },
+  {
+    id: "like-platform",
+    title: "Like — Multimedia Streaming Platform",
+    company: "Pharaon",
+    period: "01/2026 - Present",
+    status: "in-progress",
+    description:
+      "Led as Project Manager the end-to-end delivery of Like, a comprehensive multimedia streaming ecosystem developed under Pharaon Group. Like provides subscribers with access to live TV channels, on-demand content, and premium entertainment across multiple device platforms — including smart TVs (LG WebOS, Samsung Tizen), web browsers, and dedicated billing and back-office systems. The platform is engineered for reliability, scalability, and a smooth subscriber experience across all touchpoints.",
+    technologies: [
+      "Project Management",
+      "Scrum",
+      "Agile",
+      "WebOS",
+      "Tizen",
+      "React",
+      "System Analysis",
+      "REST API",
+    ],
+    features: [
+      "Unified streaming ecosystem spanning web, LG Smart TV, and Samsung Smart TV",
+      "Live TV channel delivery and on-demand content library management",
+      "Subscriber billing and subscription lifecycle management",
+      "Back-office dashboard for operators and content administrators",
+      "Cross-platform architecture ensuring consistent UX across all devices",
+      "Led Scrum ceremonies, sprint planning, and cross-functional team coordination",
+    ],
+    url: "https://likesyria.sy/apps",
+    image: "/src/assets/image/projects/like.png",
+    subProjects: [
+      {
+        id: "like-iptv",
+        title: "Like IPTV",
+        status: "in-progress",
+        description:
+          "Core IPTV application delivering live TV channel streaming and on-demand video content to subscribers. Provides a rich EPG (Electronic Program Guide), channel zapping, catch-up TV, and parental controls for a complete home entertainment experience.",
+        technologies: ["IPTV", "HLS Streaming", "EPG", "REST API"],
+        features: [
+          "Live channel streaming with Electronic Program Guide (EPG)",
+          "Catch-up TV and on-demand content library",
+          "Parental controls and subscriber profile management",
+          "Adaptive bitrate streaming for consistent quality",
+        ],
+      },
+      {
+        id: "like-lg",
+        title: "Like LG TV",
+        status: "in-progress",
+        url: "http://10.237.239.31:8080/auth/login",
+        description:
+          "A native Smart TV application built for LG WebOS, bringing the full Like streaming experience to the living room. Designed for remote-control navigation with an optimized 10-foot UI, delivering smooth channel browsing and content playback on LG Smart TVs.",
+        technologies: ["WebOS", "LG Smart TV", "JavaScript", "HLS Streaming"],
+        features: [
+          "Native LG WebOS app with remote-control-first navigation",
+          "Optimized 10-foot UI for comfortable TV viewing",
+          "Full channel grid and VOD catalog integration",
+          "Smooth playback with adaptive quality switching",
+        ],
+      },
+      {
+        id: "like-samsung",
+        title: "Like Samsung TV",
+        status: "in-progress",
+        url: "http://samsung.likesyria.sy",
+        description:
+          "A native Smart TV application built for Samsung Tizen OS, extending the Like platform to Samsung Smart TVs. Mirrors the full feature set of the LG counterpart with platform-specific optimizations for Tizen's runtime and input model.",
+        technologies: [
+          "Tizen OS",
+          "Samsung Smart TV",
+          "JavaScript",
+          "HLS Streaming",
+        ],
+        features: [
+          "Native Samsung Tizen OS app with D-pad navigation",
+          "Full parity with Like LG TV feature set",
+          "Platform-optimized performance for Tizen runtime",
+          "Seamless account and subscription sync across devices",
+        ],
+      },
+      {
+        id: "like-web",
+        title: "Like On Internet",
+        status: "in-progress",
+        url: "https://dashboard.likeoverinternet.dev.ultrawares.com",
+        description:
+          "Web-based streaming portal giving subscribers browser access to the full Like content library — live channels and on-demand — without requiring a dedicated device. Built for cross-browser compatibility and responsive viewing on desktop and tablet.",
+        technologies: [
+          "React",
+          "TypeScript",
+          "HLS.js",
+          "REST API",
+          "Responsive Design",
+        ],
+        features: [
+          "Browser-based live TV and VOD streaming (no app install required)",
+          "Responsive layout for desktop, tablet, and large-screen viewing",
+          "Subscriber authentication and profile management",
+          "Cross-browser compatible player with adaptive quality",
+        ],
+      },
+      {
+        id: "like-billing",
+        title: "Like Billing",
+        status: "in-progress",
+        url: "https://dev-front-newbilling-like.ultrawares.com/",
+        description:
+          "Subscription management and billing portal for Like platform operators. Handles the full subscriber lifecycle — plan creation, renewals, payment processing, invoicing, and revenue reporting — giving the business team complete financial visibility and control.",
+        technologies: ["React", "TypeScript", "REST API", "Dashboard"],
+        features: [
+          "Subscription plan creation and lifecycle management",
+          "Payment processing and automated renewal workflows",
+          "Invoicing, receipts, and revenue reporting dashboards",
+          "Operator-facing subscriber search and account management",
+        ],
+      },
+      {
+        id: "like-blue",
+        title: "Like Blue",
+        status: "in-progress",
+        url: "https://dashboard.likeoverinternet.dev.ultrawares.com/",
+        description:
+          "Back-office administration dashboard for the Like platform, providing operators with centralized control over content, subscribers, devices, and system configuration. Serves as the command center for day-to-day platform operations.",
+        technologies: ["React", "TypeScript", "REST API", "Admin Dashboard"],
+        features: [
+          "Centralized content and channel management interface",
+          "Subscriber and device administration panels",
+          "Real-time platform monitoring and activity logs",
+          "Role-based access control for operator teams",
+        ],
+      },
+    ] as SubProject[],
+  },
+  {
+    id: "pyramind",
+    title: "Pyramind",
+
+    company: "Pharaon",
+    period: "04/2025 - 05-2026",
+    status: "completed",
+    description:
+      "Led the analysis and planning of the project, defining clear requirements, user stories, and acceptance criteria to align development with business goals. Managed the development process using the Scrum framework, facilitating sprint planning, daily stand-ups, reviews, and retrospectives to ensure continuous progress and team collaboration. Coordinated cross-functional teams and stakeholders, tracking progress through agile tools and ensuring timely delivery of high-quality features.",
+    technologies: [
+      "Scrum",
+      "Agile",
+      "Jira",
+      "System Analysis",
+      "User Stories",
+      "Acceptance Criteria",
+    ],
+    features: [
+      "Defined epics, user stories, and acceptance criteria from stakeholder input",
+      "Facilitated Scrum ceremonies: sprint planning, stand-ups, reviews, retrospectives",
+      "Coordinated cross-functional development and QA teams",
+      "Tracked delivery milestones with agile project management tools",
+      "Aligned technical scope with business goals through iterative refinement",
+    ],
     playStore: "",
     appStore: "",
     image: "/src/assets/image/projects/Pyramind.png",
   },
   {
+    id: "damen",
     title: "Damen",
     company: "Ikoniks",
     period: "06/2024 - 10/2024",
+    status: "completed",
     description:
       "Developed two mobile applications connecting users with building service professionals, such as contractors, architects, and engineers. Designed and integrated a real-time chat feature, enabling seamless communication between users and service providers. Enhanced the user experience and interface, ensuring intuitive navigation and engagement.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "Real-time Chat",
+      "REST API",
+      "Provider",
+      "Firebase",
+    ],
+    features: [
+      "Dual-app architecture connecting clients with building professionals",
+      "Real-time chat with push notifications between users and providers",
+      "Professional profile and service listing management",
+      "Intuitive onboarding and filtering for service discovery",
+    ],
     playStore:
       "https://play.google.com/store/apps/details?id=net.damenapp.damen",
     appStore:
@@ -167,11 +358,20 @@ export const projects: Project[] = [
     image: "/src/assets/image/projects/damen.png",
   },
   {
+    id: "batra",
     title: "Batra",
     company: "Plansters",
     period: "05/2024 - 06/2024",
+    status: "completed",
     description:
       "Led the development of the Batra mobile application, a digital platform for one of Iraq's leading lighting solution providers. Engineered a user-friendly interface for browsing and purchasing indoor and outdoor lighting products, ensuring a seamless shopping experience. Integrated a robust product catalog and inventory management system to align with the company's global standards.",
+    technologies: ["Flutter", "Dart", "E-commerce", "REST API", "GetX", "Hive"],
+    features: [
+      "Full product catalog for indoor and outdoor lighting lines",
+      "Seamless cart and checkout shopping flow",
+      "Inventory management integration with backend ERP",
+      "Responsive UI designed for both Arabic and English locales",
+    ],
     playStore:
       "https://play.google.com/store/apps/details?id=plansters.plansters.com.batra",
     appStore:
@@ -179,11 +379,27 @@ export const projects: Project[] = [
     image: "/src/assets/image/projects/batra.png",
   },
   {
+    id: "al-aseel-keys",
     title: "Al Aseel Keys",
     company: "Plansters",
     period: "01/2024 - 04/2024",
+    status: "completed",
     description:
-      "Designed and developed Al Aseel Keys a mobile application tailored for managing and purchasing high-quality security and access control solutions. Built a dynamic UI/UX to enhance customer interaction and simplify product navigation. Implemented real-time data synchronization and efficient backend solutions for optimal performance.",
+      "Designed and developed Al Aseel Keys, a mobile application tailored for managing and purchasing high-quality security and access control solutions. Built a dynamic UI/UX to enhance customer interaction and simplify product navigation. Implemented real-time data synchronization and efficient backend solutions for optimal performance.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "REST API",
+      "GetX",
+      "Real-time Sync",
+      "SQFLite",
+    ],
+    features: [
+      "Product catalog for security and access control hardware",
+      "Real-time inventory and data synchronization",
+      "Dynamic filtering and product comparison UI",
+      "Optimized app performance across Android and iOS",
+    ],
     playStore:
       "https://play.google.com/store/apps/details?id=com.plansters.alaseel_app",
     appStore:
@@ -191,11 +407,28 @@ export const projects: Project[] = [
     image: "/src/assets/image/projects/alassel.png",
   },
   {
+    id: "tayar",
     title: "Tayar",
     company: "Solunyx",
     period: "07/2023 - 12/2023",
+    status: "completed",
     description:
       "Designed and developed an energy monitoring and control system that allows users to manage electricity regulators and system readings efficiently. Integrated real-time data tracking, remote control capabilities, and automated alerts, improving the reliability and accuracy of energy management. Worked closely with hardware and backend teams to ensure seamless integration between the mobile application and energy devices.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "IoT",
+      "REST API",
+      "BLoC",
+      "Background Services",
+    ],
+    features: [
+      "Real-time energy consumption monitoring dashboard",
+      "Remote control of electricity regulators from mobile",
+      "Automated alerts for anomalies and threshold breaches",
+      "Seamless hardware-to-app integration with backend teams",
+      "Background data sync for continuous device tracking",
+    ],
     playStore:
       "https://play.google.com/store/apps/details?id=com.solunyx.tayar",
     appStore:
@@ -203,54 +436,133 @@ export const projects: Project[] = [
     image: "/src/assets/image/projects/tayar.png",
   },
   {
+    id: "iman-smart-athan",
     title: "Iman Smart Athan",
     company: "Solunyx",
     period: "04/2023 - 01/2024",
+    status: "completed",
     description:
-      "Enhanced and optimized the Iman Smart Athan application, focusing on performance improvements, UI/UX refinements, and feature expansions. Developed and implemented new functionalities, including prayer time automation, athan notifications, and personalized Islamic content. Ensured a highly responsive and intuitive user experience by optimizing app architecture and refining interactions.",
+      "Enhanced and optimized the Iman Smart Athan application, focusing on performance improvements, UI/UX refinements, and feature expansions. Developed and implemented new functionalities, including prayer time automation, athan notifications, and personalized Islamic content.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "BLoC",
+      "Firebase",
+      "Push Notifications",
+      "IoT",
+    ],
+    features: [
+      "Automated prayer time scheduling and athan playback",
+      "Personalized Islamic content and Quran integration",
+      "Smart device synchronization for physical athan clocks",
+      "Performance optimizations reducing load time significantly",
+    ],
     playStore:
       "https://play.google.com/store/apps/details?id=com.solunyx.cs4_controller",
     appStore: "https://apps.apple.com/us/app/iman-smart-azan/id1643399190",
     image: "/src/assets/image/projects/iman-smart-azan.png",
   },
   {
+    id: "smart-athan",
     title: "Smart Athan",
     company: "Solunyx",
     period: "04/2023 - 09/2023",
+    status: "completed",
     description:
       "Contributed to the enhancement of the Smart Athan app, improving its core functionalities and user engagement features. Assisted in refining the app's notification system, real-time athan alerts, and seamless synchronization with external devices.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "GetX",
+      "Push Notifications",
+      "Background Services",
+    ],
+    features: [
+      "Refined notification system for reliable athan alerts",
+      "Real-time synchronization with external smart devices",
+      "Improved UI/UX for prayer time settings and customization",
+    ],
     playStore:
       "https://play.google.com/store/apps/details?id=com.solunyx.smartathan",
     appStore: "https://apps.apple.com/us/app/smart-athan/id1661943118",
     image: "/src/assets/image/projects/smart-athan.png",
   },
   {
+    id: "smart-deen",
     title: "SmartDeen",
     company: "Solunyx",
     period: "06/2023 - 01/2024",
+    status: "completed",
     description:
-      "Led the development and maintenance of SmartDeen Classic, a mobile companion app for the SmartDeen Classic Clock, providing a seamless digital experience for Islamic practices. Implemented features such as prayer time notifications, Quran recitations, Islamic calendars, and customizable alerts, enhancing the spiritual experience for users. Optimized app performance and user interface to ensure a smooth and engaging user experience across different devices.",
+      "Led the development and maintenance of SmartDeen Classic, a mobile companion app for the SmartDeen Classic Clock, providing a seamless digital experience for Islamic practices. Implemented features such as prayer time notifications, Quran recitations, Islamic calendars, and customizable alerts.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "BLoC",
+      "Hive",
+      "Background Services",
+      "IoT",
+    ],
+    features: [
+      "Companion app for SmartDeen Classic hardware clock",
+      "Prayer time notifications and Quran recitation playback",
+      "Islamic calendar with Hijri date support",
+      "Customizable alert profiles per user preference",
+      "Cross-device data sync via cloud backend",
+    ],
     playStore: "",
     appStore: "",
     image: "/src/assets/image/projects/smart-deen.png",
   },
   {
+    id: "yalla-mazad",
     title: "Yalla Mazad",
     company: "WeCan",
     period: "12/2022 - 02/2023",
+    status: "completed",
     description:
-      "Designed and developed a real-time auction platform using Flutter, providing a smooth bidding experience for users. Integrated Google Pay, Apple Pay, and Firebase Firestore, ensuring secure transactions and seamless payment processing. Implemented real-time bid tracking, push notifications, and dynamic price updates, enhancing user engagement.",
+      "Designed and developed a real-time auction platform using Flutter, providing a smooth bidding experience for users. Integrated Google Pay, Apple Pay, and Firebase Firestore, ensuring secure transactions and seamless payment processing.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "Firebase Firestore",
+      "Google Pay",
+      "Apple Pay",
+      "Provider",
+    ],
+    features: [
+      "Real-time live auction bidding with instant price updates",
+      "Google Pay and Apple Pay integration for secure checkout",
+      "Push notifications for bid status and auction countdowns",
+      "Dynamic auction catalog with search and filtering",
+    ],
     playStore: "",
     appStore:
       "https://apps.apple.com/us/app/%D9%8A%D9%84%D8%A7-%D9%85%D8%B2%D8%A7%D8%AF/id6449505286",
     image: "/src/assets/image/projects/mazad.png",
   },
   {
+    id: "alma-chat",
     title: "Alma Chat",
     company: "Future Code",
     period: "10/2022 - 12/2022",
+    status: "completed",
     description:
-      "Played a key role in the development of Alma Chat, a real-time messaging and social application with advanced communication features. Integrated instant messaging, voice and video calls, e-payments, and multimedia sharing, offering a robust digital communication solution. Ensured high app stability and responsiveness by optimizing network requests, background services, and data synchronization.",
+      "Played a key role in the development of Alma Chat, a real-time messaging and social application with advanced communication features. Integrated instant messaging, voice and video calls, e-payments, and multimedia sharing.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "WebRTC",
+      "Firebase",
+      "E-payments",
+      "Background Services",
+    ],
+    features: [
+      "Real-time instant messaging with multimedia sharing",
+      "Voice and video calling via WebRTC integration",
+      "In-app e-payment flow for digital transactions",
+      "Optimized background services for stable connectivity",
+    ],
     playStore: "",
     appStore: "",
     image: "/src/assets/image/projects/alma.png",
@@ -280,10 +592,13 @@ export const recommendations: Recommendation[] = [
 
 export const experiences: Experience[] = [
   {
+    id: "pharaon-2025",
+    companyKey: "Pharaon",
     role: "System Analyst",
     company: "Pharaon Group",
     location: "Damascus, Syria",
     period: "Apr 2025 - Present",
+    logo: "/src/assets/image/projects/pharaon.svg",
     description: [
       "Collaborating with clients to gather business needs and translate them into functional requirements",
       "Creating detailed project documentation, including epics, user stories, and requirement specifications",
@@ -293,9 +608,13 @@ export const experiences: Experience[] = [
     current: true,
   },
   {
+    id: "ikoniks-pm-2024",
+    companyKey: "Ikoniks",
     period: "08/2024 – 01/2025",
     role: "Project Manager",
-    company: "Ikoniks, Germany",
+    company: "Ikoniks",
+    location: "Germany (Remote)",
+    logo: "/src/assets/image/projects/Ikoniks.jpeg",
     description: [
       "Lead a team of developers in delivering scalable software solutions",
       "Manage project timelines, Agile processes, and client communications",
@@ -303,9 +622,12 @@ export const experiences: Experience[] = [
     ],
   },
   {
+    id: "ikoniks-dev-2024",
+    companyKey: "Ikoniks",
     period: "06/2024 – 01/2025",
     role: "Flutter Developer",
-    company: "Ikoniks, Germany",
+    company: "Ikoniks",
+    location: "Germany (Remote)",
     description: [
       "Developed and maintained the Damen mobile app using Flutter",
       "Collaborated with designers and backend developers to implement modern UI/UX principles",
@@ -313,9 +635,13 @@ export const experiences: Experience[] = [
     ],
   },
   {
+    id: "plansters-2024",
+    companyKey: "Plansters",
     period: "01/2024 – 06/2024",
     role: "Flutter Developer",
-    company: "Freelance, Damascus, Syria",
+    company: "Plansters",
+    location: "Damascus, Syria",
+    logo: "/src/assets/image/projects/plansters_logo.jpeg",
     description: [
       "Designed and built cross-platform mobile applications for diverse clients",
       "Implemented modern UI/UX principles and optimized app performance",
@@ -323,9 +649,13 @@ export const experiences: Experience[] = [
     ],
   },
   {
+    id: "solunyx-2023",
+    companyKey: "Solunyx",
     period: "04/2023 – 01/2024",
     role: "Flutter Developer",
-    company: "Solunyx, Syria",
+    company: "Solunyx",
+    location: "Syria",
+    logo: "/src/assets/image/projects/solunyx_tech_logo.jpeg",
     description: [
       "Developed and maintained mobile applications, meeting strict deadlines",
       "Led the implementation of state management solutions (BLoC, GetX)",
@@ -333,12 +663,29 @@ export const experiences: Experience[] = [
     ],
   },
   {
+    id: "wecan-2022",
+    companyKey: "WeCan",
     period: "12/2022 – 03/2023",
     role: "Flutter Developer",
-    company: "WeCan, Amman, Jordan",
+    company: "WeCan",
+    location: "Amman, Jordan",
+    logo: "/src/assets/image/projects/WeCan.jpeg",
     description: [
       "Enhanced and maintained cross-platform applications",
       "Conducted code reviews, performance testing, and documentation",
+    ],
+  },
+  {
+    id: "future-code-2022",
+    companyKey: "Future Code",
+    period: "10/2022 – 12/2022",
+    role: "Flutter Developer",
+    company: "Future Code",
+    location: "Syria",
+    logo: "/src/assets/image/projects/0future_code_logo.jpeg",
+    description: [
+      "Developed real-time messaging and social features for Alma Chat",
+      "Integrated voice/video calling and in-app payment flows",
     ],
   },
 ];

@@ -32,23 +32,44 @@ export interface SkillCategory {
   skills: string[];
 }
 
+export interface SubProject {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  features: string[];
+  url?: string;
+  image?: string;
+  status: "completed" | "in-progress";
+}
+
 export interface Project {
+  id: string;
   title: string;
   company: string;
   period: string;
   description: string;
+  technologies: string[];
+  features: string[];
+  status: "completed" | "in-progress";
   playStore?: string;
   appStore?: string;
+  url?: string;
   image: string;
+  images?: string[];
+  subProjects?: SubProject[];
 }
 
 export interface Experience {
+  id: string;
   role: string;
   company: string;
+  companyKey: string;
   location?: string;
   period: string;
   description: string[];
   current?: boolean;
+  logo?: string;
 }
 
 export interface ProcessedSkillCategory extends SkillCategory {
@@ -63,6 +84,11 @@ export interface ProcessedFeature extends Feature {
 
 export interface ProcessedProject extends Project {
   color: ColorType;
+}
+
+export interface CompanyGroup {
+  key: string;
+  projects: Project[];
 }
 
 export interface ProcessedExperience extends Experience {

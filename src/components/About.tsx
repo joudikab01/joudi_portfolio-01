@@ -25,7 +25,7 @@ export function About() {
         overflow: "hidden",
       }}
     >
-       <motion.div
+      <motion.div
         animate={{
           rotate: [0, 360],
           scale: [1, 1.2, 1],
@@ -86,7 +86,7 @@ export function About() {
               size="lg"
               style={{
                 textAlign: "center",
-                maxWidth: "700px",
+                // maxWidth: "700px",
                 margin: "1.5rem auto 3rem",
                 color: "#6b7280",
                 lineHeight: 1.8,
@@ -143,7 +143,8 @@ export function About() {
                     height: "100%",
                     background: "rgba(255, 255, 255, 0.8)",
                     backdropFilter: "blur(8px)",
-                    boxShadow: "0 4px 24px rgba(0, 98, 163, 0.07), 0 1px 2px rgba(0,0,0,0.04)",
+                    boxShadow:
+                      "0 4px 24px rgba(0, 98, 163, 0.07), 0 1px 2px rgba(0,0,0,0.04)",
                     transition: "box-shadow 0.3s ease, transform 0.3s ease",
                   }}
                 >
@@ -190,7 +191,6 @@ export function About() {
             </motion.div>
           ))}
         </SimpleGrid>
-
       </Container>
     </Box>
   );
