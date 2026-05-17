@@ -7,13 +7,14 @@ export function Footer() {
     <Box
       style={{
         padding: "48px 0 32px",
-        background: "linear-gradient(160deg, #0a1628 0%, #1a0a2e 50%, #0d1a2e 100%)",
+        background:
+          "linear-gradient(160deg, #0a1628 0%, #1a0a2e 50%, #0d1a2e 100%)",
         color: "white",
         position: "relative",
         overflow: "hidden",
       }}
     >
-       <motion.div
+      <motion.div
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.06, 0.12, 0.06],
@@ -26,7 +27,8 @@ export function Footer() {
           width: "350px",
           height: "350px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(0,136,204,0.4) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(0,136,204,0.4) 0%, transparent 70%)",
           filter: "blur(60px)",
           pointerEvents: "none",
         }}
@@ -44,20 +46,22 @@ export function Footer() {
           width: "300px",
           height: "300px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(147,51,234,0.4) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(147,51,234,0.4) 0%, transparent 70%)",
           filter: "blur(60px)",
           pointerEvents: "none",
         }}
       />
 
-       <Box
+      <Box
         style={{
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           height: "1px",
-          background: "linear-gradient(90deg, transparent, rgba(0,136,204,0.5), rgba(147,51,234,0.5), transparent)",
+          background:
+            "linear-gradient(90deg, transparent, rgba(0,136,204,0.5), rgba(147,51,234,0.5), transparent)",
         }}
       />
 
@@ -69,7 +73,7 @@ export function Footer() {
           transition={{ duration: 0.6 }}
         >
           <Box style={{ textAlign: "center" }}>
-             <Text
+            <Text
               style={{
                 fontSize: "1.25rem",
                 fontWeight: 800,
@@ -94,10 +98,10 @@ export function Footer() {
                 fontWeight: 500,
               }}
             >
-              Flutter Developer & Software Engineer
+              Project Manager & Flutter Developer
             </Text>
 
-             <Group justify="center" gap="lg" style={{ marginBottom: "2rem" }}>
+            <Group justify="center" gap="lg" style={{ marginBottom: "2rem" }}>
               {[
                 {
                   icon: IconBrandLinkedin,
@@ -117,8 +121,14 @@ export function Footer() {
                 >
                   <Anchor
                     href={social.href}
-                    target={social.href.startsWith("http") ? "_blank" : undefined}
-                    rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    target={
+                      social.href.startsWith("http") ? "_blank" : undefined
+                    }
+                    rel={
+                      social.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -143,11 +153,12 @@ export function Footer() {
               ))}
             </Group>
 
-             <Box
+            <Box
               style={{
                 width: "40px",
                 height: "1px",
-                background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
+                background:
+                  "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
                 margin: "0 auto 1.25rem",
               }}
             />

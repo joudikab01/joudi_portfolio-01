@@ -16,7 +16,7 @@ export const contactInfo: ContactInfo = {
   email: "joudi.kab01@gmail.com",
 };
 
-export const cvPath = "/src/assets/files/eng_judy_alqabbani.pdf";
+export const cvPath = "/src/assets/files/Judy_Alqabbani_CV.pdf";
 
 export const languages: Language[] = [
   {
@@ -304,7 +304,7 @@ export const projects: Project[] = [
   {
     id: "pyramind",
     title: "Pyramind",
-
+    url: "https://pyramind.pharaon-group.com/",
     company: "Pharaon",
     period: "04/2025 - 05-2026",
     status: "completed",
@@ -580,6 +580,16 @@ export const recommendations: Recommendation[] = [
     linkedin: "https://www.linkedin.com/in/bisher-al-hasani-19008a219/",
   },
   {
+    name: "Micheal Namma",
+    title: "Senior Back End Developer at Pharaon Group",
+    expertise: "Backend Development",
+    linkedin: "https://www.linkedin.com/in/micheal-namma-8111231b9/",
+    relationship:
+      "Worked with Judy · Damen & Pyramind Projects at Pharaon Group",
+    message:
+      "I had the pleasure of collaborating with Joudi as a Flutter developer on the Damen project and as a project manager on the Pyramind project. She is very proactive, well-organized, and constantly makes sure that projects run smoothly while producing excellent outcomes.\n\nJoudi is able to effectively manage priorities, communicate clearly, and quickly adjust to changing needs. She transforms concepts into dependable, user-friendly applications as a developer thanks to her strong technical abilities and meticulous attention to detail.\n\nAn excellent member of any team and a trustworthy professional.",
+  },
+  {
     name: "Nazem Almsouti",
     title: "Software Engineer · Frontend ",
     expertise: "Frontend ",
@@ -628,6 +638,8 @@ export const experiences: Experience[] = [
     role: "Flutter Developer",
     company: "Ikoniks",
     location: "Germany (Remote)",
+    logo: "/src/assets/image/projects/Ikoniks.jpeg",
+
     description: [
       "Developed and maintained the Damen mobile app using Flutter",
       "Collaborated with designers and backend developers to implement modern UI/UX principles",

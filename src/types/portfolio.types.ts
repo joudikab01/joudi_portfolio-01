@@ -1,10 +1,7 @@
- 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type IconComponent = React.ComponentType<any>;
 
- 
 export type ColorType = "cyan" | "violet";
- 
 
 export interface ContactInfo {
   location: string;

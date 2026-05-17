@@ -258,7 +258,7 @@ export function Hero() {
                 }}
               >
                 <GlitchText
-                  words={["Software Engineer", "Flutter Developer", "Product Owner"]}
+                  words={["Software Engineer", "Flutter Developer", "Project Manager", "Product Owner"]}
                   style={{
                     background: "linear-gradient(135deg, #7c3aed, #0062a3)",
                     WebkitBackgroundClip: "text",
