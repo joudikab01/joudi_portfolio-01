@@ -329,7 +329,7 @@ export const projects: Project[] = [
     ],
     playStore: "",
     appStore: "",
-    image: img("Pyramind.png"),
+    image: img("pyramind.png"),
   },
   {
     id: "damen",
