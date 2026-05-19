@@ -10,13 +10,15 @@ import type {
   SubProject,
 } from "../types/portfolio.types";
 
+const img = (name: string) => `${import.meta.env.BASE_URL}image/projects/${name}`;
+
 export const contactInfo: ContactInfo = {
   location: "Damascus, Syria",
   phone: "+963 945475943",
   email: "joudi.kab01@gmail.com",
 };
 
-export const cvPath = "/src/assets/files/Judy_Alqabbani_CV.pdf";
+export const cvPath = `${import.meta.env.BASE_URL}files/Judy_Alqabbani_CV.pdf`;
 
 export const languages: Language[] = [
   {
@@ -168,7 +170,7 @@ export const projects: Project[] = [
       "Performance-optimized asset loading for fast time-to-interactive",
       "SEO-friendly structure and semantic HTML markup",
     ],
-    image: "/image/projects/Glovent.png",
+    image: img("Glovent.png"),
   },
   {
     id: "like-platform",
@@ -197,7 +199,7 @@ export const projects: Project[] = [
       "Led Scrum ceremonies, sprint planning, and cross-functional team coordination",
     ],
     url: "https://likesyria.sy/apps",
-    image: "/image/projects/like.png",
+    image: img("like.png"),
     subProjects: [
       {
         id: "like-iptv",
@@ -327,7 +329,7 @@ export const projects: Project[] = [
     ],
     playStore: "",
     appStore: "",
-    image: "/image/projects/Pyramind.png",
+    image: img("Pyramind.png"),
   },
   {
     id: "damen",
@@ -355,7 +357,7 @@ export const projects: Project[] = [
       "https://play.google.com/store/apps/details?id=net.damenapp.damen",
     appStore:
       "https://apps.apple.com/us/app/%D8%B6%D8%A7%D9%85%D9%86/id6477861699",
-    image: "/image/projects/damen.png",
+    image: img("damen.png"),
   },
   {
     id: "batra",
@@ -376,7 +378,7 @@ export const projects: Project[] = [
       "https://play.google.com/store/apps/details?id=plansters.plansters.com.batra",
     appStore:
       "https://apps.apple.com/us/app/batra-%D8%A8%D8%AA%D8%B1%D9%89/id1498040607",
-    image: "/image/projects/batra.png",
+    image: img("batra.png"),
   },
   {
     id: "al-aseel-keys",
@@ -404,7 +406,7 @@ export const projects: Project[] = [
       "https://play.google.com/store/apps/details?id=com.plansters.alaseel_app",
     appStore:
       "https://apps.apple.com/us/app/%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD-%D8%A7%D9%84%D8%A3%D8%B5%D9%8A%D9%84/id6503984032",
-    image: "/image/projects/alassel.png",
+    image: img("alassel.png"),
   },
   {
     id: "tayar",
@@ -433,7 +435,7 @@ export const projects: Project[] = [
       "https://play.google.com/store/apps/details?id=com.solunyx.tayar",
     appStore:
       "https://apps.apple.com/us/app/%D8%AA%D9%8A%D8%A7%D8%B1/id6444006868",
-    image: "/image/projects/tayar.png",
+    image: img("tayar.png"),
   },
   {
     id: "iman-smart-athan",
@@ -460,7 +462,7 @@ export const projects: Project[] = [
     playStore:
       "https://play.google.com/store/apps/details?id=com.solunyx.cs4_controller",
     appStore: "https://apps.apple.com/us/app/iman-smart-azan/id1643399190",
-    image: "/image/projects/iman-smart-azan.png",
+    image: img("iman-smart-azan.png"),
   },
   {
     id: "smart-athan",
@@ -485,7 +487,7 @@ export const projects: Project[] = [
     playStore:
       "https://play.google.com/store/apps/details?id=com.solunyx.smartathan",
     appStore: "https://apps.apple.com/us/app/smart-athan/id1661943118",
-    image: "/image/projects/smart-athan.png",
+    image: img("smart-athan.png"),
   },
   {
     id: "smart-deen",
@@ -512,7 +514,7 @@ export const projects: Project[] = [
     ],
     playStore: "",
     appStore: "",
-    image: "/image/projects/smart-deen.png",
+    image: img("smart-deen.png"),
   },
   {
     id: "yalla-mazad",
@@ -539,7 +541,7 @@ export const projects: Project[] = [
     playStore: "",
     appStore:
       "https://apps.apple.com/us/app/%D9%8A%D9%84%D8%A7-%D9%85%D8%B2%D8%A7%D8%AF/id6449505286",
-    image: "/image/projects/mazad.png",
+    image: img("mazad.png"),
   },
   {
     id: "alma-chat",
@@ -565,7 +567,7 @@ export const projects: Project[] = [
     ],
     playStore: "",
     appStore: "",
-    image: "/image/projects/alma.png",
+    image: img("alma.png"),
   },
 ];
 
@@ -608,7 +610,7 @@ export const experiences: Experience[] = [
     company: "Pharaon Group",
     location: "Damascus, Syria",
     period: "Apr 2025 - Present",
-    logo: "/image/projects/pharaon.svg",
+    logo: img("pharaon.svg"),
     description: [
       "Collaborating with clients to gather business needs and translate them into functional requirements",
       "Creating detailed project documentation, including epics, user stories, and requirement specifications",
@@ -624,7 +626,7 @@ export const experiences: Experience[] = [
     role: "Project Manager",
     company: "Ikoniks",
     location: "Germany (Remote)",
-    logo: "/image/projects/Ikoniks.jpeg",
+    logo: img("Ikoniks.jpeg"),
     description: [
       "Lead a team of developers in delivering scalable software solutions",
       "Manage project timelines, Agile processes, and client communications",
@@ -638,7 +640,7 @@ export const experiences: Experience[] = [
     role: "Flutter Developer",
     company: "Ikoniks",
     location: "Germany (Remote)",
-    logo: "/image/projects/Ikoniks.jpeg",
+    logo: img("Ikoniks.jpeg"),
 
     description: [
       "Developed and maintained the Damen mobile app using Flutter",
@@ -653,7 +655,7 @@ export const experiences: Experience[] = [
     role: "Flutter Developer",
     company: "Plansters",
     location: "Damascus, Syria",
-    logo: "/image/projects/plansters_logo.jpeg",
+    logo: img("plansters_logo.jpeg"),
     description: [
       "Designed and built cross-platform mobile applications for diverse clients",
       "Implemented modern UI/UX principles and optimized app performance",
@@ -667,7 +669,7 @@ export const experiences: Experience[] = [
     role: "Flutter Developer",
     company: "Solunyx",
     location: "Syria",
-    logo: "/image/projects/solunyx_tech_logo.jpeg",
+    logo: img("solunyx_tech_logo.jpeg"),
     description: [
       "Developed and maintained mobile applications, meeting strict deadlines",
       "Led the implementation of state management solutions (BLoC, GetX)",
@@ -681,7 +683,7 @@ export const experiences: Experience[] = [
     role: "Flutter Developer",
     company: "WeCan",
     location: "Amman, Jordan",
-    logo: "/image/projects/WeCan.jpeg",
+    logo: img("WeCan.jpeg"),
     description: [
       "Enhanced and maintained cross-platform applications",
       "Conducted code reviews, performance testing, and documentation",
@@ -694,7 +696,7 @@ export const experiences: Experience[] = [
     role: "Flutter Developer",
     company: "Future Code",
     location: "Syria",
-    logo: "/image/projects/0future_code_logo.jpeg",
+    logo: img("0future_code_logo.jpeg"),
     description: [
       "Developed real-time messaging and social features for Alma Chat",
       "Integrated voice/video calling and in-app payment flows",
