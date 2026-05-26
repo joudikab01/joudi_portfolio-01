@@ -18,7 +18,7 @@ export const contactInfo: ContactInfo = {
   email: "joudi.kab01@gmail.com",
 };
 
-export const cvPath = `${import.meta.env.BASE_URL}files/Judy_Alqabbani_CV.pdf`;
+export const cvPath = `${import.meta.env.BASE_URL}files/Eng. Judy Alqabbani - Product Owner.pdf`;
 
 export const languages: Language[] = [
   {
