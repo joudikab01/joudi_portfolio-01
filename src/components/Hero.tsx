@@ -286,10 +286,9 @@ export function Hero() {
                   fontWeight: 400,
                 }}
               >
-                Results-driven Software Engineer specializing in cross-platform
-                mobile development with Flutter. Passionate about building
-                high-performance, scalable applications with modern UI/UX
-                principles.
+                Results-driven Product Owner and System Analyst with a strong software engineering background and hands-on experience leading cross-functional teams, owning product lifecycles, and driving business aligned technical solutions.
+                Proven ability to translate complex business needs into clear product requirements, prioritize backlogs, manage stakeholders, and ensure high-quality delivery across multiple large-scale systems. 
+                Strong advocate of Agile practices, continuous improvement, and user-centered product design.
               </Text>
             </motion.div>
 
@@ -349,7 +348,7 @@ export function Hero() {
                   <Button
                     component="a"
                     href={cvPath}
-                    download="Judy_Alqabbani_CV.pdf"
+                    download="Eng. Judy Alqabbani - Product Owner.pdf"
                     variant="outline"
                     size="lg"
                     radius="xl"
