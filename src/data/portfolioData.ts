@@ -34,10 +34,30 @@ export const languages: Language[] = [
 export const aboutMe: AboutMe = {
   title: "About Me",
   description:
-    "Results-driven Software Engineer and Flutter Developer with expertise in cross-platform mobile development, state management, and software architecture. Proficient in Dart, Java, C++, and JavaScript, with a strong focus on UI/UX, Agile methodologies, and REST APIs. Passionate about building high-performance, scalable applications and leveraging technical skills to drive innovative software solutions.",
+    "Results-driven Product Owner and System Analyst with a strong software engineering background and hands-on experience leading cross-functional teams, owning product lifecycles, and driving business aligned technical solutions. Proven ability to translate complex business needs into clear product requirements, prioritize backlogs, manage stakeholders, and ensure high-quality delivery across multiple large-scale systems. Strong advocate of Agile practices, continuous improvement, and user-centered product design.",
 };
 
 export const features: Feature[] = [
+   {
+    title: "Product Ownership",
+    description:
+      "Define product vision, prioritize roadmaps, and ensure features deliver business value",
+  },
+  {
+    title: "Agile Delivery",
+    description:
+      "Managed Scrum ceremonies, sprint planning, and continuous delivery for fast, reliable releases",
+  },
+  {
+    title: "Team Leadership",
+    description:
+      "Led development teams and managed Agile projects successfully",
+  },
+  {
+    title: "Stakeholder Management",
+    description:
+      "Built alignment across business, design, and engineering teams through clear communication and collaboration",
+  },
   {
     title: "Mobile Development",
     description:
@@ -47,19 +67,30 @@ export const features: Feature[] = [
     title: "Clean Architecture",
     description:
       "Proficient in MVC, MVVM patterns and state management solutions",
-  },
-  {
-    title: "Team Leadership",
-    description:
-      "Led development teams and managed Agile projects successfully",
-  },
+  }, 
   {
     title: "Performance",
-    description: "Focus on building high-performance, scalable applications",
+    description: "Focus on building high-performance, scalable software solutions",
   },
 ];
 
 export const skillCategories: SkillCategory[] = [
+   {
+    title: "Project Management",
+    skills: [
+      "Agile (Scrum)",
+      "Agile (Kanban)",
+      "Jira",
+      "ClickUp",
+      "Backlog Prioritization",
+      "Sprint Planning",
+      "Release Planning",
+      "Stakeholder Management",
+      "Cross-functional Coordination",
+      "Risk & Issue Management",
+      "Product Roadmapping",
+    ],
+  },
   {
     title: "Flutter Development",
     skills: [
@@ -122,10 +153,6 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Project Management",
-    skills: ["Agile (Scrum)", "Agile (Kanban)", "Jira", "ClickUp"],
-  },
-  {
     title: "Version Control & CI/CD",
     skills: [
       "Git",
@@ -152,7 +179,7 @@ export const projects: Project[] = [
     title: "Glovent Website",
     company: "Pharaon",
     period: "05/2026 - Present",
-    status: "in-progress",
+    status: "completed",
     url: "https://glovent-events.com/",
     description:
       "Developed the official landing page for Glovent, an event management and production company. Built a visually engaging, fully responsive web presence that communicates the brand's identity, highlights its services, and drives client acquisition. Focused on performance, modern UI/UX, and seamless cross-device experience.",
@@ -204,7 +231,7 @@ export const projects: Project[] = [
       {
         id: "like-iptv",
         title: "Like IPTV",
-        status: "in-progress",
+        status: "completed",
         description:
           "Core IPTV application delivering live TV channel streaming and on-demand video content to subscribers. Provides a rich EPG (Electronic Program Guide), channel zapping, catch-up TV, and parental controls for a complete home entertainment experience.",
         technologies: ["IPTV", "HLS Streaming", "EPG", "REST API"],
@@ -218,7 +245,7 @@ export const projects: Project[] = [
       {
         id: "like-lg",
         title: "Like LG TV",
-        status: "in-progress",
+        status: "completed",
         url: "http://10.237.239.31:8080/auth/login",
         description:
           "A native Smart TV application built for LG WebOS, bringing the full Like streaming experience to the living room. Designed for remote-control navigation with an optimized 10-foot UI, delivering smooth channel browsing and content playback on LG Smart TVs.",
@@ -233,7 +260,7 @@ export const projects: Project[] = [
       {
         id: "like-samsung",
         title: "Like Samsung TV",
-        status: "in-progress",
+        status: "completed",
         url: "http://samsung.likesyria.sy",
         description:
           "A native Smart TV application built for Samsung Tizen OS, extending the Like platform to Samsung Smart TVs. Mirrors the full feature set of the LG counterpart with platform-specific optimizations for Tizen's runtime and input model.",
@@ -250,27 +277,27 @@ export const projects: Project[] = [
           "Seamless account and subscription sync across devices",
         ],
       },
-      {
-        id: "like-web",
-        title: "Like On Internet",
-        status: "in-progress",
-        url: "https://dashboard.likeoverinternet.dev.ultrawares.com",
-        description:
-          "Web-based streaming portal giving subscribers browser access to the full Like content library — live channels and on-demand — without requiring a dedicated device. Built for cross-browser compatibility and responsive viewing on desktop and tablet.",
-        technologies: [
-          "React",
-          "TypeScript",
-          "HLS.js",
-          "REST API",
-          "Responsive Design",
-        ],
-        features: [
-          "Browser-based live TV and VOD streaming (no app install required)",
-          "Responsive layout for desktop, tablet, and large-screen viewing",
-          "Subscriber authentication and profile management",
-          "Cross-browser compatible player with adaptive quality",
-        ],
-      },
+      // {
+      //   id: "like-web",
+      //   title: "Like On Internet",
+      //   status: "in-progress",
+      //   url: "https://dashboard.likeoverinternet.dev.ultrawares.com",
+      //   description:
+      //     "Web-based streaming portal giving subscribers browser access to the full Like content library — live channels and on-demand — without requiring a dedicated device. Built for cross-browser compatibility and responsive viewing on desktop and tablet.",
+      //   technologies: [
+      //     "React",
+      //     "TypeScript",
+      //     "HLS.js",
+      //     "REST API",
+      //     "Responsive Design",
+      //   ],
+      //   features: [
+      //     "Browser-based live TV and VOD streaming (no app install required)",
+      //     "Responsive layout for desktop, tablet, and large-screen viewing",
+      //     "Subscriber authentication and profile management",
+      //     "Cross-browser compatible player with adaptive quality",
+      //   ],
+      // },
       {
         id: "like-billing",
         title: "Like Billing",
@@ -578,7 +605,7 @@ export const recommendations: Recommendation[] = [
     expertise: "Project Management",
     relationship: "Worked with Judy · July 2025 – Present",
     message:
-      "During our collaboration on the Pyramind project, I had the pleasure of overseeing Nazem Almsouti, and I can state with confidence that he is a superb frontend engineer. He is quick, very talented, and very proactive. He takes the initiative without waiting for guidance and never lets obstacles stand in the way of advancement. Rather than claiming that something is challenging, he always finds a solution. He doesn't need micromanagement, is adaptable, and is a pleasure to work with. He is quick to grasp requirements, meticulous, and regularly completes excellent work on schedule. His dedication, work ethic, and sense of ownership are genuinely remarkable. He would be a great asset to any team.",
+      "",
     linkedin: "https://www.linkedin.com/in/bisher-al-hasani-19008a219/",
   },
   {
