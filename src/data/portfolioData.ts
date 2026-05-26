@@ -603,9 +603,9 @@ export const recommendations: Recommendation[] = [
     name: "Bisher Alhasani Aljazaeri",
     title: "Project Manager at Pharaon Group",
     expertise: "Project Management",
-    relationship: "Worked with Judy · July 2025 – Present",
+    relationship: "Worked with Judy · October 2019 – Present",
     message:
-      "",
+      "Over the past six years, I had the pleasure of working with Judy AlQabbani, first as a university colleague and later as a teammate, and I can confidently say she is an exceptional Project Manager, Scrum Master, and Senior Flutter Developer. Judy is fast, precise, and highly committed. She demonstrates strong initiative, excellent communication skills, and a collaborative mindset. She continuously invests in self-development and handles responsibilities with resilience and professionalism, even under pressure. She would be a valuable asset to any team.",
     linkedin: "https://www.linkedin.com/in/bisher-al-hasani-19008a219/",
   },
   {
@@ -616,16 +616,25 @@ export const recommendations: Recommendation[] = [
     relationship:
       "Worked with Judy · Damen & Pyramind Projects at Pharaon Group",
     message:
-      "I had the pleasure of collaborating with Joudi as a Flutter developer on the Damen project and as a project manager on the Pyramind project. She is very proactive, well-organized, and constantly makes sure that projects run smoothly while producing excellent outcomes.\n\nJoudi is able to effectively manage priorities, communicate clearly, and quickly adjust to changing needs. She transforms concepts into dependable, user-friendly applications as a developer thanks to her strong technical abilities and meticulous attention to detail.\n\nAn excellent member of any team and a trustworthy professional.",
+      "I had the pleasure of collaborating with Judy as a Flutter developer on the Damen project and as a project manager on the Pyramind project. She is very proactive, well-organized, and constantly makes sure that projects run smoothly while producing excellent outcomes.\n\nJudy is able to effectively manage priorities, communicate clearly, and quickly adjust to changing needs. She transforms concepts into dependable, user-friendly applications as a developer thanks to her strong technical abilities and meticulous attention to detail.\n\nAn excellent member of any team and a trustworthy professional.",
   },
   {
     name: "Nazem Almsouti",
-    title: "Software Engineer · Frontend ",
-    expertise: "Frontend ",
+    title: "Software Engineer · Frontend",
+    expertise: "Frontend Development",
     relationship: "Worked with Judy · Pyramind Project at Pharaon Group",
     message:
       "I had the opportunity to work with Judy Alqabbani at Pharaon Group on the Pyramind project, where she served as Project Manager and I contributed as a frontend developer. Judy's strength lies in how she handles requirements: clearly written, well-structured, and easy to act on. Tasks were properly defined before they reached the team, which reduced unnecessary back-and-forth significantly. She managed task distribution and scheduling with a practical approach, took deadlines seriously, and followed up on project releases in an organized manner. When issues came up, she addressed them with a problem-solving mindset and was open to technical input from the development side, which kept communication straightforward. I'd recommend Judy to any team that values clear processes, on-time delivery, and structured project management.",
     linkedin: "https://www.linkedin.com/in/nazem-almsouti/",
+  },
+  {
+    name: "Esraa Abou Srour",
+    title: "Software Engineer · Backend ",
+    expertise: "Backend Development",
+    relationship: "Worked with Judy · September 2023 - Present",
+    message:
+      "I had the pleasure of working with Judy at Ikoniks, where she held a dual role as both a Project Manager and a Flutter Developer. Judy consistently impressed the team with her ability to balance technical expertise and leadership. As a Flutter Developer, she demonstrated strong coding skills, attention to detail, and a passion for building clean, user-friendly mobile applications. As a Project Manager, she skillfully coordinated tasks, communicated clearly with stakeholders, and ensured that projects were delivered on time and with high quality. Her unique combination of technical and managerial strengths made her an invaluable asset to the team. I highly recommend Judy for any role that requires both hands-on development and strategic project oversight. She brings dedication, clarity, and collaboration to every project she leads.",
+    linkedin: "https://www.linkedin.com/in/esraa-abou-srour/",
   },
 ];
 
